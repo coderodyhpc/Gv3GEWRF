@@ -1,5 +1,4 @@
-# GIS4WRF (https://doi.org/10.5281/zenodo.1288569)
-# Copyright (c) 2018 D. Meyer and M. Riechert. Licensed under MIT.
+# Gv3GEWRF 
 
 from typing import List, Tuple, Iterable, Any
 from collections import namedtuple
@@ -22,96 +21,11 @@ PY_MAJORMINOR = platform.python_version_tuple()[:2]
 # name: distribution name, min: minimum version we require, install: version to be installed
 Dependency = namedtuple('Dep', ['name', 'min', 'install'])
 
-# All extra packages we need that are generally not part of
-# QGIS's Python (on Windows) or the system Python (on Linux/macOS).
-# Given that we use a custom site-packages folder (in ~/.gis4wrf) there are some limitations on
-# what we can do since Python does not allow multiple versions of a package to be used.
-# If a package is already installed, it is only updated if we had installed
-# it ourselves, in which case it would be in our custom site-packages folder.
-# If an installed package has a version lower than the 'min' key but we did not install it ourselves,
-# then we can't do anything and have to notify the user to update the package manually
-# (this would typically happen on Linux/macOS where QGIS uses the system Python installation).
-# If a package is not installed, then it is installed with the exact version given in
-# the 'install' key. Exact versions are used to avoid surprises when new versions are released.
-# Note that if it is determined that we can install or update a given package, then all other packages
-# that we installed ourselves, even if they don't need to be updated, are re-installed as well.
-# This works around some limitations of 'pip install --prefix' and cannot be prevented currently.
-# See the end of this script for more details on this.
 DEPS = [
     # Direct dependencies.
-
     Dependency('f90nml', install='1.0.2', min=None),
-
     # Indirect dependencies.
-    # Indirect dependencies are dependencies that we don't import directly in our code but
-    # that are required by one or more of the main dependencies above and that require a special version
-    # to be installed. Normally they would be automatically installed by one of the direct
-    # dependencies above, but this would nearly always install the latest version of that
-    # indirect dependency. The reason why we sometimes don't want that is mostly due to packaging
-    # bugs where the latest version is binary incompatible with older versions of numpy.
-    # And since we can't update numpy ourselves, we need to use older versions of those indirect
-    # dependencies which are built against older versions of numpy.
 ]
-# For some packages we need to use different versions depending on the Python version used.
-if PY_MAJORMINOR == ('3', '6'):
-    DEPS += [
-        # NetCDF4 >= 1.3.0 is built against too recent numpy version.
-        Dependency('netCDF4',
-            install='1.2.9',
-            min='None'),
-        # dependency of netCDF4
-        Dependency('cftime',
-            install='1.5.1',
-            min='None'),
-    ]
-elif PY_MAJORMINOR == ('3', '7'):
-    DEPS += [
-        Dependency('netCDF4',
-            install='1.4.2',
-            min='None'),
-        # dependency of netCDF4
-        Dependency('cftime',
-            install='1.5.1',
-            min='None'),
-    ]
-elif PY_MAJORMINOR == ('3', '9'):
-    DEPS += [
-        Dependency('netCDF4',
-            install='1.5.7',
-            min='None'),
-        # dependency of netCDF4
-        Dependency('cftime',
-            install='1.5.1',
-            min='None'),
-    ]
-# best effort
-else:
-    DEPS += [
-        Dependency('netCDF4',
-            install='1.*',
-            min='None'),
-        # dependency of netCDF4
-        Dependency('cftime',
-            install='1.*',
-            min='None'),
-    ]
-
-# Use a custom folder for the packages to avoid polluting the per-user site-packages.
-# This also avoids any permission issues.
-# Windows: ~\AppData\Local\gis4wrf\python<xy>
-# macOS: ~/Library/Application Support/gis4wrf/python<xy>
-# Linux: ~/.local/share/gis4wrf/python<xy>
-if platform.system() == 'Windows':
-    DATA_HOME = os.getenv('LOCALAPPDATA')
-    assert DATA_HOME, '%LOCALAPPDATA% not found'
-elif platform.system() == 'Darwin':
-    DATA_HOME = os.path.join(os.path.expanduser('~'), 'Library', 'Application Support')
-else:
-    DATA_HOME = os.getenv('XDG_DATA_HOME')
-    if not DATA_HOME:
-        DATA_HOME = os.path.join(os.path.expanduser('~'), '.local', 'share')
-INSTALL_PREFIX = os.path.join(DATA_HOME, 'gis4wrf', 'python' + ''.join(PY_MAJORMINOR))
-LOG_PATH = os.path.join(INSTALL_PREFIX, 'pip.log')
 
 def bootstrap() -> Iterable[Tuple[str,Any]]:
     ''' Yields a stream of log information. '''
