@@ -111,24 +111,24 @@ class QGISPlugin():
     def init_logging(self) -> None:
         print("At init_logging")
 
-###        levels = {
-###            # https://github.com/qgis/QGIS/issues/42996
-###            logging.NOTSET: Qgis.NoLevel if hasattr(Qgis, 'NoLevel') else Qgis.Info,
+        levels = {
+            # https://github.com/qgis/QGIS/issues/42996
+            logging.NOTSET: Qgis.NoLevel if hasattr(Qgis, 'NoLevel') else Qgis.Info,
             
-###            logging.DEBUG: Qgis.Info,
-###            logging.INFO: Qgis.Info,
-###            logging.WARN: Qgis.Warning,
-###            logging.ERROR: Qgis.Critical,
-###            logging.CRITICAL: Qgis.Critical,
-###        }
-###        class QgsLogHandler(logging.Handler):
-###            def emit(self, record: logging.LogRecord) -> None:
-###                log_entry = self.format(record)
-###                level = levels[record.levelno]                
-###                QgsMessageLog.logMessage(log_entry, PLUGIN_NAME, level, False)
+            logging.DEBUG: Qgis.Info,
+            logging.INFO: Qgis.Info,
+            logging.WARN: Qgis.Warning,
+            logging.ERROR: Qgis.Critical,
+            logging.CRITICAL: Qgis.Critical,
+        }
+        class QgsLogHandler(logging.Handler):
+            def emit(self, record: logging.LogRecord) -> None:
+                log_entry = self.format(record)
+                level = levels[record.levelno]                
+                QgsMessageLog.logMessage(log_entry, PLUGIN_NAME, level, False)
         
-###        self.log_handler = QgsLogHandler()
-###        logger.addHandler(self.log_handler)
+        self.log_handler = QgsLogHandler()
+        logger.addHandler(self.log_handler)
 
     def destroy_logging(self) -> None:
         logger.removeHandler(self.log_handler)
