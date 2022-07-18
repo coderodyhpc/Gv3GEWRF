@@ -108,7 +108,9 @@ class QGISPlugin():
 ###    def report_bug(self) -> None:
 ###        webbrowser.open('https://github.com/GIS4WRF/gis4wrf/issues')
 
-###    def init_logging(self) -> None:
+    def init_logging(self) -> None:
+        print("At init_logging")
+
 ###        levels = {
 ###            # https://github.com/qgis/QGIS/issues/42996
 ###            logging.NOTSET: Qgis.NoLevel if hasattr(Qgis, 'NoLevel') else Qgis.Info,
