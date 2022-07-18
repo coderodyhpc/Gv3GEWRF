@@ -267,6 +267,6 @@ class QGISPlugin():
 ###        if add_to_add_layer:
 ###            self.iface.insertAddLayerAction(action)
 
-###        self.actions.append(action)
+        self.actions.append(action)
 
         return action
