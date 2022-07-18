@@ -1,14 +1,44 @@
 # Gv3GEWRF Plugin
 # Copyright (c) 2022 Odycloud.
 
-# IMPORTANT: Do not import anything from gis4wrf.core here as this
-# interferes with bootstrapping.
+WRF_EARTH_RADIUS = 6370000
+WRF_PROJ4_SPHERE = '+a={radius} +b={radius}'.format(radius=WRF_EARTH_RADIUS)
 
-PLUGIN_NAME = 'Gv3GEWRF'
-###ABOUT_ICON_PATH = ':/plugins/Gv3GEWRF/about_icon.svg'
-###GIS4WRF_LOGO_PATH = ':/plugins/Gv3GEWRF/gis4wrf_logo.svg'
-###BUG_ICON_PATH = ':/plugins/Gv3GEWRF/bug_icon.svg'
-###ADD_WRF_NETCDF_LAYER_ICON_PATH = ':/plugins/Gv3GEWRF/AddWRFNetCDFLayer.svg'
-###ADD_BINARY_LAYER_ICON_PATH = ':/plugins/Gv3GEWRF/AddBinaryLayer.svg'
+'''
+v1:
+Initial version
+v2:
+Add stand_lon to Lambert projections.
+In v1, stand_lon was implicitly required to be identical to domain center longitude.
+'''
+PROJECT_JSON_VERSION = 2
 
-###MSMPI_DOWNLOAD_PAGE = 'https://www.microsoft.com/en-us/download/details.aspx?id=56727'
+# gdal forces us to provide names for categories starting from index 0.
+# WRF's categories typically start at 1, so we need to add fake entries
+# which we later filter out again from the palette when creating a QGIS raster layer.
+UNUSED_CATEGORY_LABEL = '__UNUSED__'
+
+# wrf-python/src/wrf/projection.py
+class ProjectionTypes(object):
+    LAMBERT_CONFORMAL = 1
+    POLAR_STEREOGRAPHIC = 2
+    MERCATOR = 3
+    LAT_LON = 6
+
+WRF_WPS_DIST_OLD_VERSIONS = ['3.9']
+WRF_WPS_DIST_VERSION = '4.0'
+
+WRF_DIST = {
+    # keys: platform.system()
+    'Linux': {
+        'serial': 'https://github.com/WRF-CMake/WRF/releases/download/WRF-CMake-4.0/wrf-cmake-4.0-serial-basic-release-linux.tar.xz',
+        'dmpar': 'https://github.com/WRF-CMake/WRF/releases/download/WRF-CMake-4.0/wrf-cmake-4.0-dmpar-basic-release-linux.tar.xz'
+    }
+}
+
+WPS_DIST = {
+    'Linux': {
+        'serial': 'https://github.com/WRF-CMake/WPS/releases/download/WPS-CMake-4.0/wps-cmake-4.0-serial-basic-release-linux.tar.xz',
+        'dmpar': 'https://github.com/WRF-CMake/WPS/releases/download/WPS-CMake-4.0/wps-cmake-4.0-dmpar-basic-release-linux.tar.xz'
+    }
+}
