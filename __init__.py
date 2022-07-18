@@ -14,6 +14,8 @@ def classFactory(iface):
     out: Gv3GEWRF.plugin.QGISPlugin
     I have gotten rid of the bootstrap component
     """
+    from Gv3GEWRF.plugin.constants import PLUGIN_NAME
+###    from Gv3GEWRF.plugin.ui.helpers import WaitDialog
 
     from Gv3GEWRF.plugin.mainPlugin import QGISPlugin
     return QGISPlugin(iface)
