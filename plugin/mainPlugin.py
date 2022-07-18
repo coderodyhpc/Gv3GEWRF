@@ -51,7 +51,7 @@ class QGISPlugin():
         self.init_logging() #This is probably to track what happens while running the plugin A.F. 
 ###        install_user_error_handler(self.iface) #This is at gis4wrf/gis4wrf/plugin/ui/helpers.py
 
-###        self.menu = '&' + PLUGIN_NAME
+        self.menu = '&' + PLUGIN_NAME
 ###        self.add_action(GIS4WRF_LOGO_PATH, text=PLUGIN_NAME, callback=self.show_dock, add_to_toolbar=True,
 ###                        parent=self.iface.mainWindow(), status_tip='Run GIS4WRF')
 ###        self.add_action(ADD_WRF_NETCDF_LAYER_ICON_PATH, text='Add WRF NetCDF Layer...', add_to_add_layer=True, add_to_menu=False,
