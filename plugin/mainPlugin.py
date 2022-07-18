@@ -45,7 +45,7 @@ from Gv3GEWRF.plugin.constants import (PLUGIN_NAME)
 class QGISPlugin():
     def __init__(self, iface: QgisInterface) -> None:
         self.iface = iface
-###        self.actions = []  # type: List[QAction]
+        self.actions = []  # type: List[QAction]
 ###        self.dock_widget = None # type: MainDock
 
     def initGui(self) -> None:
