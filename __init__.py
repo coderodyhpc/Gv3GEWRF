@@ -15,7 +15,7 @@ def classFactory(iface):
     I have gotten rid of the bootstrap component
     """
 
-    from Gv3GEWRF.plugin.plugin import QGISPlugin
+    from Gv3GEWRF.plugin.mainPlugin import QGISPlugin
     return QGISPlugin(iface)
 
 
