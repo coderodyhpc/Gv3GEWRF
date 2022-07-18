@@ -17,6 +17,9 @@ from qgis.gui import QgisInterface
 ###from Gv3GEWRF.core import (
 ###    get_latest_gis4wrf_version, get_installed_gis4wrf_version, is_newer_version,
 ###    WRF_WPS_DIST_VERSION, WRF_WPS_DIST_OLD_VERSIONS, logger)
+from Gv3GEWRF.core import (logger)
+###    get_latest_gis4wrf_version, get_installed_gis4wrf_version, is_newer_version,
+###    WRF_WPS_DIST_VERSION, WRF_WPS_DIST_OLD_VERSIONS, logger)
 
 # Initialize Qt resources from auto-generated file resources.py
 ###import Gv3GEWRF.plugin.resources
