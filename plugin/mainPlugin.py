@@ -53,33 +53,36 @@ class QGISPlugin():
            Note: This method is called by QGIS.
         """
         self.init_logging() #This is probably to track what happens while running the plugin A.F. 
-        self.action = QAction(QIcon("/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png"),
-                              "Gv3GEWRF plugin",
-                              self.iface.mainWindow())
-        self.action.setObjectName("testAction")
-        self.action.setWhatsThis("Configuration for test plugin")
-        self.action.setStatusTip("This is status tip")
-###        self.action.triggered.connect(self.run)
+
+#!#        self.action = QAction(QIcon("/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png"),
+#!#                              "Gv3GEWRF plugin",
+#!#                              self.iface.mainWindow())
+#!#        self.action.setObjectName("testAction")
+#!#        self.action.setWhatsThis("Configuration for test plugin")
+#!#        self.action.setStatusTip("This is status tip")
+#!#        self.action.triggered.connect(self.run)
 # add toolbar button and menu item
-###        self.iface.addToolBarIcon(self.action)
-###        self.iface.addPluginToMenu("&Test plugins", self.action)
+#!#        self.iface.addToolBarIcon(self.action)
+#!#        self.iface.addPluginToMenu("&Test plugins", self.action)
 # connect to signal renderComplete which is emitted when canvas
 # rendering is done
-###        self.iface.mapCanvas().renderComplete.connect(self.renderTest)
+#!#        self.iface.mapCanvas().renderComplete.connect(self.renderTest)
 
 ###        install_user_error_handler(self.iface) #This is at gis4wrf/gis4wrf/plugin/ui/helpers.py
 
 # create action that will start plugin configuration
 
-#        self.menu = '&' + PLUGIN_NAME
+        self.menu = '&' + PLUGIN_NAME
 ###        self.add_action(GIS4WRF_LOGO_PATH, text=PLUGIN_NAME, callback=self.show_dock, add_to_toolbar=True,
 ###                        parent=self.iface.mainWindow(), status_tip='Run GIS4WRF')
 ###        self.add_action(ADD_WRF_NETCDF_LAYER_ICON_PATH, text='Add WRF NetCDF Layer...', add_to_add_layer=True, add_to_menu=False,
 ###                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
 ###        self.add_action(ADD_BINARY_LAYER_ICON_PATH, text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
 ###                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
-#        self.add_action(ABOUT_ICON_PATH, text="About", callback=self.show_about,
-#                        parent=self.iface.mainWindow())
+        self.add_action(/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png,
+                        text="About", 
+                        callback=self.show_about,
+                        parent=self.iface.mainWindow())
 ###        self.add_action(BUG_ICON_PATH, text='Report a bug', callback=self.report_bug,
 ###                        parent=self.iface.mainWindow(), status_tip='Report a bug')
 
