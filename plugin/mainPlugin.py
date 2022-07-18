@@ -59,15 +59,15 @@ class QGISPlugin():
 # create action that will start plugin configuration
 
         self.menu = '&' + PLUGIN_NAME
-        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-                        text=PLUGIN_NAME, callback=self.show_dock, add_to_toolbar=True,
-                        parent=self.iface.mainWindow(), status_tip='Run GIS4WRF')
-        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-                        text='Add WRF NetCDF Layer...', add_to_add_layer=True, add_to_menu=False,
-                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
-        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-                        text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
-                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
+###        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+###                        text=PLUGIN_NAME, callback=self.show_dock, add_to_toolbar=True,
+###                        parent=self.iface.mainWindow(), status_tip='Run GIS4WRF')
+###        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+###                        text='Add WRF NetCDF Layer...', add_to_add_layer=True, add_to_menu=False,
+###                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
+###        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+###                        text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
+###                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
         self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
                         text="About", 
                         callback=self.show_about,
