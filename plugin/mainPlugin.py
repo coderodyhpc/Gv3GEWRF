@@ -9,10 +9,10 @@ import logging
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
-###from PyQt5.QtGui import QIcon
-###from PyQt5.QtWidgets import QAction, QWidget
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QAction, QWidget
+###from PyQt5.QtGui import *
+###from PyQt5.QtWidgets import *
 from qgis.core import QgsMessageLog, Qgis
 from qgis.gui import QgisInterface
 
@@ -40,7 +40,7 @@ from Gv3GEWRF.core import (logger)
 ###    ADD_BINARY_LAYER_ICON_PATH, ABOUT_ICON_PATH, BUG_ICON_PATH)
 from Gv3GEWRF.plugin.constants import (PLUGIN_NAME)
 
-from . import resources
+###from . import resources
 
 class QGISPlugin():
     def __init__(self, iface: QgisInterface) -> None:
