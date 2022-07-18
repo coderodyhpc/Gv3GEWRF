@@ -1,9 +1,6 @@
 # Gv3GEWRF 
 # Copyright (c) Odycloud.
 
-""" QGIS plugin discovery """
-from Gv3GEWRF.bootstrap import bootstrap
-
 def classFactory(iface):
     """Load QGISPlugin class.
     Parameters
@@ -15,46 +12,10 @@ def classFactory(iface):
     Returns
     -------
     out: Gv3GEWRF.plugin.QGISPlugin
-        The QGIS Plugin Implementation.
+    I have gotten rid of the bootstrap component
     """
-    bootstrap_with_ui(iface)
 
-###    from Gv3GEWRF.plugin.plugin import QGISPlugin
+    from Gv3GEWRF.plugin.plugin import QGISPlugin
     return QGISPlugin(iface)
 
-def bootstrap_with_ui(iface):
-    from PyQt5.QtWidgets import QMessageBox
-    from PyQt5.QtCore import QCoreApplication
-###    from Gv3GEWRF.plugin.constants import PLUGIN_NAME
-###    from Gv3GEWRF.plugin.ui.helpers import WaitDialog
 
-    app = QCoreApplication.instance()
-
-    parent = iface.mainWindow()
-    dialog = None
-    log = ''
-###    try:
-###        for msg_type, msg_val in bootstrap():
-###            # Ideally, bootstrap() should run in a QThread, however this requires bigger refactoring
-###            # since the classFactory() function above needs to import the plugin module and return an instance.
-###            # To make this asynchronous, the plugin class would have to be changed to lazy-initialize itself.
-###            app.processEvents()
-###
-###            if msg_type == 'log':
-###                log += msg_val
-###            elif msg_type == 'needs_install':
-###                QMessageBox.information(parent, PLUGIN_NAME,
-###                    PLUGIN_NAME + ' requires additional or updated versions of Python packages to function. ' +
-###                    'These will be installed into a separate folder specific to ' + PLUGIN_NAME + ' and ' +
-###                    'will not influence any existing Python installation.',
-###                    QMessageBox.Ok)
-###                dialog = WaitDialog(parent, PLUGIN_NAME)
-###            elif msg_type == 'install_done':
-###                dialog.accept()
-###    except Exception as e:
-###        if dialog:
-###            dialog.accept()
-###        QMessageBox.critical(parent, PLUGIN_NAME,
-###            'An error occurred during the installation of Python packages. ' +
-###            'Click on "Stack Trace" in the QGIS message bar for details.')
-###        raise RuntimeError(PLUGIN_NAME + ': Error installing Python packages\nLog:\n' + log) from e
