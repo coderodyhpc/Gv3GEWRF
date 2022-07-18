@@ -36,6 +36,7 @@ from Gv3GEWRF.core import (logger)
 ###from Gv3GEWRF.plugin.constants import (
 ###    PLUGIN_NAME, GIS4WRF_LOGO_PATH, ADD_WRF_NETCDF_LAYER_ICON_PATH, 
 ###    ADD_BINARY_LAYER_ICON_PATH, ABOUT_ICON_PATH, BUG_ICON_PATH)
+from Gv3GEWRF.plugin.constants import (PLUGIN_NAME)
 
 
 class QGISPlugin():
