@@ -272,7 +272,7 @@ class WaitDialog(IgnoreKeyPressesDialog):
 
 def install_user_error_handler(iface: QgisInterface) -> None:
     # Lazy import to work around restriction explained at top of this file.
-    from gis4wrf.core import UserError, UnsupportedError, DistributionError
+    from Gv3GEWRF.core import UserError, UnsupportedError, DistributionError
 
     # The most-specific one is used when handling a user error.
     formatters = {
