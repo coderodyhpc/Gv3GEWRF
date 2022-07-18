@@ -24,11 +24,7 @@ from PyQt5.QtWidgets import (
 from qgis.gui import QgisInterface
 from qgis.core import QgsApplication, QgsMapLayer
 
-# NOTE: Do not import anything from gis4wrf.core or other gis4wrf.plugin module depending on core here.
-#       The helpers module is used in the bootstrapping UI.
-
 from Gv3GEWRF.plugin.constants import PLUGIN_NAME
-
 
 DIM_VALIDATOR = QIntValidator()
 DIM_VALIDATOR.setBottom(0)
