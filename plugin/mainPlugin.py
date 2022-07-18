@@ -53,7 +53,7 @@ class QGISPlugin():
            Note: This method is called by QGIS.
         """
         self.init_logging() #This is probably to track what happens while running the plugin A.F. 
-        self.action = QAction(QIcon(":/plugins/Gv3GEWRF/icon512.png"),
+        self.action = QAction(QIcon("/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png"),
                               "Gv3GEWRF plugin",
                               self.iface.mainWindow())
         self.action.setObjectName("testAction")
