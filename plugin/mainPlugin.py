@@ -116,8 +116,8 @@ class QGISPlugin():
 ###            Qt.RightDockWidgetArea, self.dock_widget)
 ###        add_default_basemap()
 
-###    def show_about(self) -> None:
-###        AboutDialog().exec_()
+    def show_about(self) -> None:
+        AboutDialog().exec_()
 
 ###    def add_wrf_layer(self) -> None:
 ###        path, _ = QFileDialog.getOpenFileName(caption='Open WRF NetCDF File')
