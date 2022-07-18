@@ -121,7 +121,8 @@ class QGISPlugin():
 ###            return
 ###        load_wps_binary_layer(folder)
 
-###    def report_bug(self) -> None:
+    def report_bug(self) -> None:
+        print ('Report any issue to support@odyhpc.com')
 ###        webbrowser.open('https://github.com/GIS4WRF/gis4wrf/issues')
 
     def init_logging(self) -> None:
