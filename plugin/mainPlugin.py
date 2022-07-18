@@ -59,8 +59,8 @@ class QGISPlugin():
 ###                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
 ###        self.add_action(ADD_BINARY_LAYER_ICON_PATH, text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
 ###                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
-###        self.add_action(ABOUT_ICON_PATH, text="About", callback=self.show_about,
-###                        parent=self.iface.mainWindow())
+        self.add_action(ABOUT_ICON_PATH, text="About", callback=self.show_about,
+                        parent=self.iface.mainWindow())
 ###        self.add_action(BUG_ICON_PATH, text='Report a bug', callback=self.report_bug,
 ###                        parent=self.iface.mainWindow(), status_tip='Report a bug')
 
