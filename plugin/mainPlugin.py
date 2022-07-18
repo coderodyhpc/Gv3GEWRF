@@ -79,13 +79,13 @@ class QGISPlugin():
 ###                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
 ###        self.add_action(ADD_BINARY_LAYER_ICON_PATH, text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
 ###                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
-#        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-#                        text="About", 
-#                        callback=self.show_about,
-#                        parent=self.iface.mainWindow())
-        self.add_action(text="About", 
+        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+                        text="About", 
                         callback=self.show_about,
                         parent=self.iface.mainWindow())
+#!        self.add_action(text="About", 
+#!                        callback=self.show_about,
+#!                        parent=self.iface.mainWindow())
 ###        self.add_action(BUG_ICON_PATH, text='Report a bug', callback=self.report_bug,
 ###                        parent=self.iface.mainWindow(), status_tip='Report a bug')
 
@@ -217,40 +217,40 @@ class QGISPlugin():
 ###        thread.succeeded.connect(on_succeeded)
 ###        thread.start()
 
-###    def add_action(self, icon_path: str, text: str, callback: Callable,
-###                   enabled_flag: bool=True, add_to_menu: bool=True,
-###                   add_to_toolbar: bool=False, add_to_add_layer: bool=False,
-###                   status_tip: str=None, whats_this: str=None, parent: QWidget=None
-###                   ) -> QAction:
-###        """Helper function for creating menu items
-###        Parameters
-###        ----------
-###        icon_path: Path to the icon for this action. Can be a resource
-###            path (e.g. `:/plugins/foo/bar.png`) or a normal file system path.
-###        text: Text that should be shown in menu items for this action.
-###        callback: Function to be called when the action is triggered.
-###        enabled_flag: A flag indicating if the action should be enabled
-###            by default. Defaults to True.
-###        add_to_menu: Flag indicating whether the action should also
-###            be added to the menu. Defaults to True.
-###        add_to_toolbar: Flag indicating whether the action should also
-###            be added to the Plugins toolbar. Defaults to False.
-###        add_to_layer: Flag indicating whether the action should also
-###            be added to the Layer > Add Layer menu. Defaults to False.
-###        status_tip: Optional text to show in a popup when mouse pointer
-###            hovers over the action.
-###        whats_this: Optional text to show in the status bar when the
-###            mouse pointer hovers over the action after clicking on `?`.
-###        parent: Parent widget for the new action. Defaults None.
-###        Returns
-###        -------
-###        out: The action that was created. Note that the action is
-###            also added to `self.actions` list.
-###        """
-###        icon = QIcon(icon_path)
-###        action = QAction(icon, text, parent)
-###        action.triggered.connect(callback)
-###        action.setEnabled(enabled_flag)
+    def add_action(self, icon_path: str, text: str, callback: Callable,
+                   enabled_flag: bool=True, add_to_menu: bool=True,
+                   add_to_toolbar: bool=False, add_to_add_layer: bool=False,
+                   status_tip: str=None, whats_this: str=None, parent: QWidget=None
+                   ) -> QAction:
+        """Helper function for creating menu items
+        Parameters
+        ----------
+        icon_path: Path to the icon for this action. Can be a resource
+            path (e.g. `:/plugins/foo/bar.png`) or a normal file system path.
+        text: Text that should be shown in menu items for this action.
+        callback: Function to be called when the action is triggered.
+        enabled_flag: A flag indicating if the action should be enabled
+            by default. Defaults to True.
+        add_to_menu: Flag indicating whether the action should also
+            be added to the menu. Defaults to True.
+        add_to_toolbar: Flag indicating whether the action should also
+            be added to the Plugins toolbar. Defaults to False.
+        add_to_layer: Flag indicating whether the action should also
+            be added to the Layer > Add Layer menu. Defaults to False.
+        status_tip: Optional text to show in a popup when mouse pointer
+            hovers over the action.
+        whats_this: Optional text to show in the status bar when the
+            mouse pointer hovers over the action after clicking on `?`.
+        parent: Parent widget for the new action. Defaults None.
+        Returns
+        -------
+        out: The action that was created. Note that the action is
+            also added to `self.actions` list.
+        """
+        icon = QIcon(icon_path)
+        action = QAction(icon, text, parent)
+        action.triggered.connect(callback)
+        action.setEnabled(enabled_flag)
 
 ###        if status_tip is not None:
 ###            action.setStatusTip(status_tip)
@@ -269,4 +269,4 @@ class QGISPlugin():
 
 ###        self.actions.append(action)
 
-###        return action
+        return action
