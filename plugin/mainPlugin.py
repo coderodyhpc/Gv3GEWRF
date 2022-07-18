@@ -40,6 +40,7 @@ from Gv3GEWRF.core import (logger)
 ###    ADD_BINARY_LAYER_ICON_PATH, ABOUT_ICON_PATH, BUG_ICON_PATH)
 from Gv3GEWRF.plugin.constants import (PLUGIN_NAME)
 
+from . import resources
 
 class QGISPlugin():
     def __init__(self, iface: QgisInterface) -> None:
