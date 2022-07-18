@@ -59,13 +59,13 @@ class QGISPlugin():
         self.action.setObjectName("testAction")
         self.action.setWhatsThis("Configuration for test plugin")
         self.action.setStatusTip("This is status tip")
-        self.action.triggered.connect(self.run)
+###        self.action.triggered.connect(self.run)
 # add toolbar button and menu item
-        self.iface.addToolBarIcon(self.action)
-        self.iface.addPluginToMenu("&Test plugins", self.action)
+###        self.iface.addToolBarIcon(self.action)
+###        self.iface.addPluginToMenu("&Test plugins", self.action)
 # connect to signal renderComplete which is emitted when canvas
 # rendering is done
-        self.iface.mapCanvas().renderComplete.connect(self.renderTest)
+###        self.iface.mapCanvas().renderComplete.connect(self.renderTest)
 
 ###        install_user_error_handler(self.iface) #This is at gis4wrf/gis4wrf/plugin/ui/helpers.py
 
