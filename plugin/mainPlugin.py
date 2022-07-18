@@ -79,7 +79,7 @@ class QGISPlugin():
 ###                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
 ###        self.add_action(ADD_BINARY_LAYER_ICON_PATH, text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
 ###                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
-        self.add_action(/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png,
+        self.add_action('/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
                         text="About", 
                         callback=self.show_about,
                         parent=self.iface.mainWindow())
