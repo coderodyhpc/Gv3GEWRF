@@ -63,9 +63,9 @@ class QGISPlugin():
 #        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
 #                        text='Add WRF NetCDF Layer...', add_to_add_layer=True, add_to_menu=False,
 #                        parent=self.iface.mainWindow(), callback=self.add_wrf_layer)
-        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-                        text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
-                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
+#        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+#                        text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
+#                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
         self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
                         text="About", 
                         callback=self.show_about,
