@@ -52,7 +52,7 @@ class QGISPlugin():
         """
         self.init_logging() #This is probably to track what happens while running the plugin A.F. 
 
-        install_user_error_handler(self.iface) #This is at plugin/ui/helpers.py
+#        install_user_error_handler(self.iface) #This is at plugin/ui/helpers.py
 
 # create action that will start plugin configuration
 
