@@ -238,20 +238,20 @@ class QGISPlugin():
         action.triggered.connect(callback)
         action.setEnabled(enabled_flag)
 
-###        if status_tip is not None:
-###            action.setStatusTip(status_tip)
+        if status_tip is not None:
+            action.setStatusTip(status_tip)
 
-###        if whats_this is not None:
-###            action.setWhatsThis(whats_this)
+        if whats_this is not None:
+            action.setWhatsThis(whats_this)
 
-###        if add_to_toolbar:
-###            self.iface.addToolBarIcon(action)
+        if add_to_toolbar:
+            self.iface.addToolBarIcon(action)
 
-###        if add_to_menu:
-###            self.iface.addPluginToMenu(self.menu, action)
+        if add_to_menu:
+            self.iface.addPluginToMenu(self.menu, action)
 
-###        if add_to_add_layer:
-###            self.iface.insertAddLayerAction(action)
+        if add_to_add_layer:
+            self.iface.insertAddLayerAction(action)
 
         self.actions.append(action)
 
