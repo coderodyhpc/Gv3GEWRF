@@ -44,7 +44,7 @@ class QGISPlugin():
     def __init__(self, iface: QgisInterface) -> None:
         self.iface = iface
         self.actions = []  # type: List[QAction]
-###        self.dock_widget = None # type: MainDock
+        self.dock_widget = None # type: MainDock
 
     def initGui(self) -> None:
         """Create the menu entries and toolbar icons inside the QGIS GUI.
