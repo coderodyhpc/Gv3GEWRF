@@ -27,4 +27,4 @@ from Gv3GEWRF.core.logging import *
 ###from Gv3GEWRF.core.transforms.wrf_netcdf_to_gdal import *
 ###from Gv3GEWRF.core.crs import *
 ###from Gv3GEWRF.core.program import *
-###from Gv3GEWRF.core.project import *
+from Gv3GEWRF.core.project import *
