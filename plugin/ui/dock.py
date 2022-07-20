@@ -26,7 +26,7 @@ class MainDock(QDockWidget):
         self.setWidget(tabs)
         self.tabs = tabs
 
-        self.simulation_tab.view_wrf_nc_file.connect(self.view_wrf_nc_file)
+###        self.simulation_tab.view_wrf_nc_file.connect(self.view_wrf_nc_file)
 
     def open_view_tab(self):
         self.tabs.setCurrentIndex(3)
