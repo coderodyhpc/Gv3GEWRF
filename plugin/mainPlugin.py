@@ -30,7 +30,7 @@ from Gv3GEWRF.core import (logger)
 from Gv3GEWRF.plugin.ui.helpers import install_user_error_handler
 
 ###from Gv3GEWRF.plugin.ui.options import OptionsFactory
-###from Gv3GEWRF.plugin.ui.dock import MainDock
+from Gv3GEWRF.plugin.ui.dock import MainDock
 ###from Gv3GEWRF.plugin.ui.dialog_about import AboutDialog
 
 ###from Gv3GEWRF.plugin.options import get_options
