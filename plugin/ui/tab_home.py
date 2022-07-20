@@ -7,7 +7,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PyQt5.QtGui import QPixmap
 
-from Gv3GEWRF.plugin.constants import GIS4WRF_LOGO_PATH
+######from Gv3GEWRF.plugin.constants import GIS4WRF_LOGO_PATH
 
 class HomeTab(QWidget):
     """Class for creating the Home tab"""
