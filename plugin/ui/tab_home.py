@@ -20,6 +20,12 @@ class HomeTab(QWidget):
                         <br>
                     </html>
                 """
+        text = """
+                    <html>
+                        <br>
+                        <p>What do I want to write?</p>
+                  </html>
+               """
 ###        text = """
 ###                    <html>
 ###                        <br>
