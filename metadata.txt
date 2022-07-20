@@ -11,6 +11,6 @@ homepage=https://odyhpc.com
 ###tracker=https://github.com/GIS4WRF/gis4wrf/issues
 
 tags=WRF, WPS, GIS, NetCDF, GRIB, NWP, weather, atmospheric science, atmospheric modelling, plotting
-icon=plugin/resources/icon512.png
+icon=plugin/resources/QGIS_logo64.png
 
 qgisMinimumVersion=3.0
