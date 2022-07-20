@@ -94,11 +94,11 @@ class QGISPlugin():
 
         self.destroy_logging()
 
-###    def show_dock(self) -> None:
-###        if not self.dock_widget:
-###            self.dock_widget = MainDock(self.iface, self.dock_widget)
-###        self.iface.addDockWidget(
-###            Qt.RightDockWidgetArea, self.dock_widget)
+    def show_dock(self) -> None:
+        if not self.dock_widget:
+            self.dock_widget = MainDock(self.iface, self.dock_widget)
+        self.iface.addDockWidget(
+            Qt.RightDockWidgetArea, self.dock_widget)
 ###        add_default_basemap()
 
     def show_about(self) -> None:
