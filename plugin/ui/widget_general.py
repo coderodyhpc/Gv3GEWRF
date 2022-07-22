@@ -14,7 +14,7 @@ from PyQt5.QtGui import QPixmap
 
 from Gv3GEWRF.core import Project
 from Gv3GEWRF.plugin.options import get_options
-from Gv3GEWRF.plugin.constants import GIS4WRF_LOGO_PATH
+###from Gv3GEWRF.plugin.constants import GIS4WRF_LOGO_PATH
 
 class GeneralWidget(QWidget):
     create_project = pyqtSignal(str)
@@ -56,7 +56,7 @@ class GeneralWidget(QWidget):
         label_text.setWordWrap(True)
         label_text.setOpenExternalLinks(True)
         label_pixmap = QLabel()
-        pixmap = QPixmap(GIS4WRF_LOGO_PATH)
+        pixmap = QPixmap('/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png')
         label_pixmap.setPixmap(pixmap)
         label_pixmap.setAlignment(Qt.AlignCenter)
         vbox.addWidget(label_title)
