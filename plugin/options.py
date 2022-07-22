@@ -8,7 +8,7 @@ import multiprocessing
 
 from qgis.core import QgsSettings
 
-from Gv3GEWRF.core import find_mpiexec
+###from Gv3GEWRF.core import find_mpiexec
 from Gv3GEWRF.core.util import export
 from Gv3GEWRF.plugin.broadcast import Broadcast
 
