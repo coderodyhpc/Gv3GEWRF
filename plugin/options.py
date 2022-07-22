@@ -19,8 +19,8 @@ class Keys(object):
     WORKING_DIR = SETTINGS_NAMESPACE + 'working_dir'
     WRF_DIR = SETTINGS_NAMESPACE + 'wrf_dir'
     WPS_DIR = SETTINGS_NAMESPACE + 'wps_dir'
-    MPI_ENABLED = SETTINGS_NAMESPACE + 'mpi_enabled'
-    MPI_PROCESSES = SETTINGS_NAMESPACE + 'mpi_processes'
+#    MPI_ENABLED = SETTINGS_NAMESPACE + 'mpi_enabled'
+#    MPI_PROCESSES = SETTINGS_NAMESPACE + 'mpi_processes'
     RDA_USERNAME = SETTINGS_NAMESPACE + 'rda_username'
     RDA_PASSWORD = SETTINGS_NAMESPACE + 'rda_password'
 
@@ -41,30 +41,30 @@ class Options(object):
         self._wrf_dir = settings.value(Keys.WRF_DIR, None)
         self._wps_dir = settings.value(Keys.WPS_DIR, None)
 
-        self._mpi_enabled = settings.value(Keys.MPI_ENABLED, False, type=bool)
-        self._mpi_processes = settings.value(Keys.MPI_PROCESSES, multiprocessing.cpu_count(), type=int)
+#        self._mpi_enabled = settings.value(Keys.MPI_ENABLED, False, type=bool)
+#        self._mpi_processes = settings.value(Keys.MPI_PROCESSES, multiprocessing.cpu_count(), type=int)
 
         self._rda_username = settings.value(Keys.RDA_USERNAME)
         self._rda_password = settings.value(Keys.RDA_PASSWORD)
 
         # Proactively enable MPI if available and if no WRF/WPS distributions are set yet.
         # This will lead more people to download the pre-built MPI-enabled distributions.
-        if not self._mpi_enabled and not self._wrf_dir and not self._wps_dir:
-            try:
-                find_mpiexec()
-            except:
-                pass
-            else:
-                self.mpi_enabled = True
-                self.save()
+#        if not self._mpi_enabled and not self._wrf_dir and not self._wps_dir:
+#            try:
+#                find_mpiexec()
+#            except:
+#                pass
+#            else:
+#                self.mpi_enabled = True
+#                self.save()
 
         self.after_load_save()
 
     def save(self) -> None:
         settings = QgsSettings()
         settings.setValue(Keys.WORKING_DIR, self._working_dir)
-        settings.setValue(Keys.MPI_ENABLED, self._mpi_enabled)
-        settings.setValue(Keys.MPI_PROCESSES, self._mpi_processes)
+#        settings.setValue(Keys.MPI_ENABLED, self._mpi_enabled)
+#        settings.setValue(Keys.MPI_PROCESSES, self._mpi_processes)
         settings.setValue(Keys.WRF_DIR, self._wrf_dir)
         settings.setValue(Keys.WPS_DIR, self._wps_dir)
         settings.setValue(Keys.RDA_USERNAME, self._rda_username)
@@ -84,21 +84,21 @@ class Options(object):
     def working_dir(self, path) -> None:
         self._working_dir = path
 
-    @property
-    def mpi_enabled(self) -> bool:
-        return self._mpi_enabled
+#    @property
+#    def mpi_enabled(self) -> bool:
+#        return self._mpi_enabled
 
-    @mpi_enabled.setter
-    def mpi_enabled(self, enabled: bool) -> None:
-        self._mpi_enabled = enabled
+#    @mpi_enabled.setter
+#    def mpi_enabled(self, enabled: bool) -> None:
+#        self._mpi_enabled = enabled
 
-    @property
-    def mpi_processes(self) -> int:
-        return self._mpi_processes
+#    @property
+#    def mpi_processes(self) -> int:
+#        return self._mpi_processes
 
-    @mpi_processes.setter
-    def mpi_processes(self, count: int) -> None:
-        self._mpi_processes = count
+#    @mpi_processes.setter
+#    def mpi_processes(self, count: int) -> None:
+#        self._mpi_processes = count
 
     @property
     def wrf_dir(self) -> Optional[str]:
