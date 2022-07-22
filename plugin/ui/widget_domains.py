@@ -20,7 +20,6 @@ from qgis.gui import QgisInterface
 #)
 from Gv3GEWRF.core import (
     LonLat, Coordinate2D, CRS, Project, read_namelist, write_namelist,
-    convert_project_to_wps_namelist,
     UserError
 )
 
