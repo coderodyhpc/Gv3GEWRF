@@ -41,7 +41,7 @@ def rect_to_bbox(rect: QgsRectangle) -> BoundingBox2D:
     return BoundingBox2D(minx=rect.xMinimum(), maxx=rect.xMaximum(),
                          miny=rect.yMinimum(), maxy=rect.yMaximum())
 
-def update_domain_outline_layers(canvas: QgsMapCanvas, project: gis4wrf.core.Project,
+def update_domain_outline_layers(canvas: QgsMapCanvas, project: Gv3GEWRF.core.Project,
                                  zoom_out=True) -> None:
     gdal_ds = Gv3GEWRF.core.convert_project_to_gdal_outlines(project)
     gdal_layer = gdal_ds.GetLayer(0) # type: ogr.Layer
