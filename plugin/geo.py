@@ -31,7 +31,7 @@ def get_qgis_crs(proj4: str) -> QgsCoordinateReferenceSystem:
         if srs_id == -1:
             QMessageBox.critical(
                 None, 'QGIS version too old', 
-                'Your QGIS version is too old. See <a href="https://github.com/GIS4WRF/gis4wrf/issues/149#issuecomment-569264760">github.com/GIS4WRF/gis4wrf/issues/149</a> for details.',
+                'Your QGIS version is too old. ',
                 QMessageBox.Ok,
                 QMessageBox.Ok)
         #assert srs_id != -1, proj4
@@ -91,8 +91,8 @@ def update_domain_outline_layers(canvas: QgsMapCanvas, project: Gv3GEWRF.core.Pr
         if zoom_out and idx == project.domain_count - 1:
             zoom_out_to_layer(canvas, layer)
 
-def update_domain_grid_layers(project: gis4wrf.core.Project) -> None:
-    vrts = gis4wrf.core.convert_project_to_gdal_checkerboards(project)
+def update_domain_grid_layers(project: Gv3GEWRF.core.Project) -> None:
+    vrts = Gv3GEWRF.core.convert_project_to_gdal_checkerboards(project)
     vrt_and_titles = [(vrt, 'Domain {}'.format(i + 1), None) for i, vrt in enumerate(vrts)]
     load_layers(vrt_and_titles, 'WRF Domains (Grid)', visible=False, expanded=False)
 
@@ -162,9 +162,9 @@ def fix_style(layer: QgsRasterLayer) -> None:
         # paletted renderer. This is because we need to remove the UNUSED categories.
         color_table = provider.colorTable(1)
         classes = QgsPalettedRasterRenderer.colorTableToClassData(color_table)
-        if not any(c.label == gis4wrf.core.UNUSED_CATEGORY_LABEL for c in classes):
+        if not any(c.label == Gv3GEWRF.core.UNUSED_CATEGORY_LABEL for c in classes):
             return
-        new_classes = filter(lambda c: c.label != gis4wrf.core.UNUSED_CATEGORY_LABEL, classes)
+        new_classes = filter(lambda c: c.label != Gv3GEWRF.core.UNUSED_CATEGORY_LABEL, classes)
         new_renderer = QgsPalettedRasterRenderer(renderer.input(), 1, new_classes)
         layer.setRenderer(new_renderer)
     else:
@@ -208,7 +208,7 @@ def switch_band(layer: QgsRasterLayer, index: int) -> None:
     layer.triggerRepaint()
 
 def load_wps_binary_layer(folder: str) -> None:
-    vrt_path, title, short_name, dispose = gis4wrf.core.convert_wps_binary_to_vrt_dataset(folder)
+    vrt_path, title, short_name, dispose = Gv3GEWRF.core.convert_wps_binary_to_vrt_dataset(folder)
     layer = load_layers([(vrt_path, title, short_name)])[0]
     dispose_after_delete(layer, dispose)
 
