@@ -1,4 +1,5 @@
-# Gv3GEWRF
+# Gv3GEWRF Plugin
+# Copyright (c) 2022 Odycloud.
 
 from typing import List, Tuple, Callable, Optional, Union
 from threading import Timer
@@ -42,7 +43,7 @@ def rect_to_bbox(rect: QgsRectangle) -> BoundingBox2D:
 
 def update_domain_outline_layers(canvas: QgsMapCanvas, project: gis4wrf.core.Project,
                                  zoom_out=True) -> None:
-    gdal_ds = gis4wrf.core.convert_project_to_gdal_outlines(project)
+    gdal_ds = Gv3GEWRF.core.convert_project_to_gdal_outlines(project)
     gdal_layer = gdal_ds.GetLayer(0) # type: ogr.Layer
     gdal_srs = gdal_layer.GetSpatialRef() # type: osr.SpatialReference
     proj4 = gdal_srs.ExportToProj4()
