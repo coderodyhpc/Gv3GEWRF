@@ -224,7 +224,7 @@ def clear_layout(layout: QLayout) -> None:
 
 def dispose_after_delete(layer: QgsMapLayer, dispose: Callable[[],None]) -> None:
     # Lazy import to work around restriction explained at top of this file.
-    from gis4wrf.plugin.ui.thread import TaskThread
+    from Gv3GEWRF.plugin.ui.thread import TaskThread
 
     # There is no signal indicating that the layer has been fully removed.
     # Therefore in the willBeDeleted signal we need to give control back to
