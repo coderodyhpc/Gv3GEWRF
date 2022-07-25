@@ -32,7 +32,7 @@ def convert_project_to_gdal_checkerboards(project: Project) -> List[str]:
         options = [
             'subClass=VRTDerivedRasterBand',
             'PixelFunctionLanguage=Python',
-            'PixelFunctionType=gis4wrf.core.gdal_checkerboard_pixelfunction'
+            'PixelFunctionType=Gv3GEWRF.core.gdal_checkerboard_pixelfunction'
         ]
         vrt_ds.AddBand(gdal.GDT_Byte, options)
         vrt_ds.FlushCache()
