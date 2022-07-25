@@ -12,7 +12,7 @@ import f90nml
 from Gv3GEWRF.core.util import export
 from Gv3GEWRF.core.errors import UserError
 
-SCHEMA_DIR = os.path.join(os.path.dirname(__file__),  'nml_schemas')
+SCHEMA_DIR = os.path.join(os.path.dirname(__file__),  'album')
 
 SCHEMA_VAR_TYPES = {
     'str': str,
