@@ -6,7 +6,7 @@ import os
 
 import netCDF4 as nc
 
-from gis4wrf.core.util import export
+from Gv3GEWRF.core.util import export
 
 @export
 def get_wrf_nc_time_steps(path: str) -> List[str]:
