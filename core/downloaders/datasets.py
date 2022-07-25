@@ -76,7 +76,7 @@ geo_datasets = {
     # TODO: add `updated_Iceland_LU.tar.gz``
 }
 
-# Lowest resolution of each mandatory field (WRF 4.0).
+# Lowest resolution of each mandatory field (WRF v4.4).
 # See http://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html.
 geo_datasets_mandatory_lores = [
     "albedo_modis",
@@ -92,7 +92,7 @@ geo_datasets_mandatory_lores = [
     "topo_gmted2010_5m"
 ]
 
-# Highest resolution of each mandatory field (WRF 4.0).
+# Highest resolution of each mandatory field (WRF v4.4).
 # See http://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html.
 geo_datasets_mandatory_hires = [
     "albedo_modis",
