@@ -13,17 +13,11 @@ from PyQt5.QtWidgets import (
 from qgis.core import QgsCoordinateReferenceSystem, QgsProject, QgsRectangle
 from qgis.gui import QgisInterface
 
-#from Gv3GEWRF.core import (
-#    LonLat, Coordinate2D, CRS, Project, read_namelist, write_namelist,
-#    convert_wps_nml_to_project, convert_project_to_wps_namelist,
-#    UserError
-#)
 from Gv3GEWRF.core import (
     LonLat, Coordinate2D, CRS, Project, read_namelist, write_namelist,
+    convert_wps_nml_to_project, convert_project_to_wps_namelist,
     UserError
 )
-
-
 from Gv3GEWRF.plugin.geo import update_domain_outline_layers, update_domain_grid_layers, get_qgis_crs, rect_to_bbox
 from Gv3GEWRF.plugin.ui.helpers import (
     MyLineEdit, add_grid_lineedit, update_input_validation_style, create_lineedit,
