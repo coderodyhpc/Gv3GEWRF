@@ -6,9 +6,9 @@ from PyQt5.QtWidgets import QDockWidget, QTabWidget
 from qgis.gui import QgisInterface
 
 from Gv3GEWRF.plugin.ui.tab_home import HomeTab
-###from Gv3GEWRF.plugin.ui.tab_datasets import DatasetsTab
+from Gv3GEWRF.plugin.ui.tab_datasets import DatasetsTab
 from Gv3GEWRF.plugin.ui.tab_simulation import SimulationTab
-###from Gv3GEWRF.plugin.ui.widget_view import ViewWidget
+from Gv3GEWRF.plugin.ui.widget_view import ViewWidget
 from Gv3GEWRF.plugin.ui.helpers import WhiteScroll
 
 class MainDock(QDockWidget):
@@ -18,11 +18,11 @@ class MainDock(QDockWidget):
 
         tabs = QTabWidget()
         tabs.addTab(WhiteScroll(HomeTab()), 'Home')
-###        tabs.addTab(DatasetsTab(iface), "Datasets")
-###        self.simulation_tab = SimulationTab(iface)
+        tabs.addTab(DatasetsTab(iface), "Datasets")
+        self.simulation_tab = SimulationTab(iface)
         tabs.addTab(self.simulation_tab, "Simulation")
-###        self.view_tab = ViewWidget(iface, dock_widget)
-###        tabs.addTab(self.view_tab, "View")
+        self.view_tab = ViewWidget(iface, dock_widget)
+        tabs.addTab(self.view_tab, "View")
         self.setWidget(tabs)
         self.tabs = tabs
 
