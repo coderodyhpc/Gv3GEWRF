@@ -366,7 +366,7 @@ class Project(object):
 
     def update_wps_namelist(self):
         # deferred import to resolve circular dependency on Project type
-        from gis4wrf.core.transforms.project_to_wps_namelist import convert_project_to_wps_namelist
+        from Gv3GEWRF.core.transforms.project_to_wps_namelist import convert_project_to_wps_namelist
 
         self.fill_domains()
         wps = convert_project_to_wps_namelist(self)
@@ -377,7 +377,7 @@ class Project(object):
             patch_namelist(self.wps_namelist_path, wps)
 
     def update_wrf_namelist(self):
-        from gis4wrf.core.transforms.project_to_wrf_namelist import convert_project_to_wrf_namelist
+        from Gv3GEWRF.core.transforms.project_to_wrf_namelist import convert_project_to_wrf_namelist
 
         self.fill_domains()
         nml_patch = convert_project_to_wrf_namelist(self)
