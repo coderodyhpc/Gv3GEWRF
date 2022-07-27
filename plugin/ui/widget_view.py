@@ -235,7 +235,7 @@ class ViewWidget(QWidget):
         self.selected_dataset = self.get_dataset_name()
 
         if previous_dataset is not None:
-            gis4wrf.plugin.geo.remove_group(previous_dataset)
+            Gv3GEWRF.plugin.geo.remove_group(previous_dataset)
 
         if previous_dataset == self.selected_dataset:
             # User re-opened same file, e.g. to see new time steps while running simulation.
@@ -295,7 +295,7 @@ class ViewWidget(QWidget):
         label = self.get_variable_label(variable)
         uri, dispose = gis4wrf.core.convert_wrf_nc_var_to_gdal_dataset(
             dataset.path, variable.name, extra_dim_index, interp_level, interp_vert_name)
-        layer = gis4wrf.plugin.geo.load_layers([(uri, label, variable.name)],
+        layer = Gv3GEWRF.plugin.geo.load_layers([(uri, label, variable.name)],
             group_name=dataset.name, visible=True)[0]
         dispose_after_delete(layer, dispose)
 
@@ -306,7 +306,7 @@ class ViewWidget(QWidget):
         for layer in layers:
             var_name = layer.shortName()
             if var_name in dataset.variables:
-                gis4wrf.plugin.geo.switch_band(layer, time_idx)
+                Gv3GEWRF.plugin.geo.switch_band(layer, time_idx)
     
     def get_variable_label(self, variable: WRFNetCDFVariable) -> str:
         label = variable.name.upper()
