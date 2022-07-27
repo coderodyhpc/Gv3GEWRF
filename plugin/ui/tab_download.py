@@ -12,13 +12,14 @@ class DownloadTab(QTabWidget):
     def __init__(self, iface) -> None:
         super().__init__()
 
+        self.general_tab = GeneralWidget()
         gfs = WhiteScroll(self.general_tab)
-        nam = WhiteScroll(self.domain_tab)
-        other = WhiteScroll(self.run_tab)
+#        nam = WhiteScroll(self.domain_tab)
+#        other = WhiteScroll(self.run_tab)
 
         self.addTab(gfs, 'GFS')
-        self.addTab(nam, 'NAM')
-        self.addTab(other, 'Other')
+#        self.addTab(nam, 'NAM')
+#        self.addTab(other, 'Other')
         
 #        self.addTab(WhiteScroll(self.general_tab), 'General')
 #        self.addTab(WhiteScroll(self.domain_tab), 'Domain')
