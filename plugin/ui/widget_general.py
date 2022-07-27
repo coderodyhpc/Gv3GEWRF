@@ -14,7 +14,7 @@ from PyQt5.QtGui import QPixmap
 
 from Gv3GEWRF.core import Project
 from Gv3GEWRF.plugin.options import get_options
-###from Gv3GEWRF.plugin.constants import GIS4WRF_LOGO_PATH
+###from Gv3GEWRF.plugin.constants import Gv3GEWRF_LOGO_PATH
 
 class GeneralWidget(QWidget):
     create_project = pyqtSignal(str)
