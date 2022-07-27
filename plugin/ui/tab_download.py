@@ -12,10 +12,17 @@ class DownloadTab(QTabWidget):
     def __init__(self, iface) -> None:
         super().__init__('Accelerated download of meteorological data')
 
-        gfs = WhiteScroll(Process(iface))
-        nam = WhiteScroll(Process(iface))
-        other = WhiteScroll(Process(iface))
+        gfs = WhiteScroll(self.general_tab)
+        nam = WhiteScroll(self.domain_tab)
+        other = WhiteScroll(self.run_tab)
 
         self.addTab(gfs, 'GFS')
         self.addTab(nam, 'NAM')
         self.addTab(other, 'Other')
+        
+#        self.addTab(WhiteScroll(self.general_tab), 'General')
+#        self.addTab(WhiteScroll(self.domain_tab), 'Domain')
+#        self.addTab(WhiteScroll(self.datasets_tab), 'Data')
+#        self.addTab(WhiteScroll(self.run_tab), 'Run')
+
+        self.tabs = [self.general_tab, self.domain_tab, self.datasets_tab, self.run_tab]
