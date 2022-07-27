@@ -23,6 +23,8 @@ class MainDock(QDockWidget):
         tabs.addTab(DatasetsTab(iface), "Download")
         self.download_tab = DownloadTab(iface)
         tabs.addTab(DatasetsTab(iface), "Datasets")
+        self.preprocessor_tab = PreprocessorTab(iface)
+        tabs.addTab(self.preprocessor_tab, "Preprocessor")
         self.simulation_tab = SimulationTab(iface)
         tabs.addTab(self.simulation_tab, "Simulation")
         self.view_tab = ViewWidget(iface, dock_widget)
