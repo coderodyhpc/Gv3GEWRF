@@ -117,9 +117,9 @@ class ViewWidget(QWidget):
         self.vbox.addLayout(hbox)
 
     def add_dataset(self, path: str) -> None:
-        variables = gis4wrf.core.get_supported_wrf_nc_variables(path)
-        times = gis4wrf.core.get_wrf_nc_time_steps(path)
-        extra_dims = gis4wrf.core.get_wrf_nc_extra_dims(path)
+        variables = Gv3GEWRF.core.get_supported_wrf_nc_variables(path)
+        times = Gv3GEWRF.core.get_wrf_nc_time_steps(path)
+        extra_dims = Gv3GEWRF.core.get_wrf_nc_extra_dims(path)
         dataset_name = os.path.basename(path)
         is_new_dataset = dataset_name not in self.datasets
         self.datasets[dataset_name] = Dataset(dataset_name, path, variables, times, extra_dims)
