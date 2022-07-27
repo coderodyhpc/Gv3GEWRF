@@ -2,7 +2,9 @@
 # Copyright (c) 2022 Odycloud.
 
 from PyQt5.QtWidgets import QTabWidget
+from PyQt5.QtCore import pyqtSignal
 
+from qgis.gui import QgisInterface
 
 from Gv3GEWRF.plugin.ui.helpers import WhiteScroll
 from Gv3GEWRF.plugin.ui.widget_process import Process
