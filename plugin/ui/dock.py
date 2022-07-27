@@ -18,6 +18,8 @@ class MainDock(QDockWidget):
 
         tabs = QTabWidget()
         tabs.addTab(WhiteScroll(HomeTab()), 'Home')
+        tabs.addTab(DatasetsTab(iface), "Download")
+        self.download_tab = DownloadTab(iface)
         tabs.addTab(DatasetsTab(iface), "Datasets")
         self.simulation_tab = SimulationTab(iface)
         tabs.addTab(self.simulation_tab, "Simulation")
