@@ -41,8 +41,7 @@ class AboutDialog(QDialog):
 
         text_how_to_cite = QTextBrowser()
         text_how_to_cite.setOpenExternalLinks(True)
-        how_to_cite = "Please see <a href='https://gis4wrf.github.io/cite'>How to reference GIS4WRF</a> \
-                       for up-to-date referencing information."
+        how_to_cite = "Citation."
         text_how_to_cite.setFont(font)
         text_how_to_cite.setText(how_to_cite)
 
