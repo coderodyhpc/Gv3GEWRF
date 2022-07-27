@@ -16,6 +16,6 @@ class DownloadTab(QTabWidget):
         nam = WhiteScroll(Process(iface))
         other = WhiteScroll(Process(iface))
 
-        self.addTab(geo, 'GFS')
-        self.addTab(met, 'NAM')
-        self.addTab(process, 'Other')
+        self.addTab(gfs, 'GFS')
+        self.addTab(nam, 'NAM')
+        self.addTab(other, 'Other')
