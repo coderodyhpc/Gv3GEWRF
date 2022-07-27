@@ -25,4 +25,4 @@ class DownloadTab(QTabWidget):
 #        self.addTab(WhiteScroll(self.datasets_tab), 'Data')
 #        self.addTab(WhiteScroll(self.run_tab), 'Run')
 
-        self.tabs = [self.general_tab, self.domain_tab, self.datasets_tab, self.run_tab]
+#        self.tabs = [self.general_tab, self.domain_tab, self.datasets_tab, self.run_tab]
