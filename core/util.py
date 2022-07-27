@@ -89,7 +89,7 @@ def link_or_copy(src: str, dst: str) -> None:
         shutil.copy(src, dst)
 
 def get_temp_dir() -> str:
-    return tempfile.mkdtemp(prefix='gis4wrf')
+    return tempfile.mkdtemp(prefix='Gv3GEWRF')
 
 def remove_dir(path: Union[str,Path]) -> None:
     # This function avoids two issues occuring on Windows:
