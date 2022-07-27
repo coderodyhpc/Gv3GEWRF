@@ -27,10 +27,10 @@ class GeneralWidget(QWidget):
 
         self.options = get_options()
 
-        btn_new = QPushButton("Create Gv3GEWRF Project",
+        btn_new = QPushButton("Create Project",
             clicked=self.on_create_project_button_clicked)
 
-        btn_existing = QPushButton("Open Gv3GEWRF Project",
+        btn_existing = QPushButton("Open Project",
             clicked=self.on_open_project_button_clicked)
 
         self.current_project_label = QLabel()
@@ -38,31 +38,30 @@ class GeneralWidget(QWidget):
         vbox = QVBoxLayout()
         title = """
                     <html>
-                        <h1>Gv3GEWRF simulation tools</h1>
+                        <h1>Graphic Environment on Graviton3 for WRF</h1>
+                        <h2>Preprocessing Tools</h2>
                         <br>
                     </html>
                 """
         text = """
                     <html>
                         <br>
-                        <p>The <em>Simulation</em> tab contains tools to help you prepare your simulations.</p>
-                        <p>Here, you will find four subtabs: <em>General</em>, <em>Domain</em>, <em>Data</em>, and <em>Run</em>. In the <em>General </em>subtab you can create or open GIS4WRF projects. The <em>Domain</em>, <em>Data </em>and <em>Run </em>subtabs contain tools to help you with the steps to define and run a WRF simulation such as defining datasets to use in your simulation, configure namelists and run WPS and WRF programs.</p>
-                        <p>More details on how to use these tools and examples can be found online at <a title="GIS4WRF Website -- Documentation and Tutorials" href="https://gis4wrf.github.io" target="_blank" rel="noopener">https://gis4wrf.github.io</a>.</p>
+                        <p>Here I need to describe the different actions.</p>
                   </html>
                """
 
-        label_title = QLabel(title)
-        label_text = QLabel(text)
-        label_text.setWordWrap(True)
-        label_text.setOpenExternalLinks(True)
-        label_pixmap = QLabel()
-        pixmap = QPixmap('/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png')
-        label_pixmap.setPixmap(pixmap)
-        label_pixmap.setAlignment(Qt.AlignCenter)
-        vbox.addWidget(label_title)
-        vbox.addWidget(label_pixmap)
-        vbox.addWidget(label_text)
-        vbox.addStretch()
+#        label_title = QLabel(title)
+#        label_text = QLabel(text)
+#        label_text.setWordWrap(True)
+#        label_text.setOpenExternalLinks(True)
+#        label_pixmap = QLabel()
+#        pixmap = QPixmap('/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png')
+#        label_pixmap.setPixmap(pixmap)
+#        label_pixmap.setAlignment(Qt.AlignCenter)
+#        vbox.addWidget(label_title)
+#        vbox.addWidget(label_pixmap)
+#        vbox.addWidget(label_text)
+#        vbox.addStretch()
 
         vbox.addWidget(btn_new)
         vbox.addWidget(btn_existing)
