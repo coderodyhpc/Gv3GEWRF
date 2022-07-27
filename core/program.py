@@ -25,6 +25,7 @@ def get_startup_info():
 @export
 def find_mpiexec() -> str:
     plat = platform.system()
+    mpiexec = "/opt/atrium/openmpi/bin"
 
 #    paths = []
 
@@ -52,7 +53,6 @@ def find_mpiexec() -> str:
     
 #    if mpiexec_path is None:
 #        raise UserError('MPI not found')
-            mpiexec_path = "/opt/atrium/openmpi/bin"
     
     return mpiexec_path
 
