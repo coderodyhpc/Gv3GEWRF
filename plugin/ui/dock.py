@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QDockWidget, QTabWidget
 from qgis.gui import QgisInterface
 
 from Gv3GEWRF.plugin.ui.tab_home import HomeTab
+from Gv3GEWRF.plugin.ui.tab_download import DownloadTab
 from Gv3GEWRF.plugin.ui.tab_datasets import DatasetsTab
 from Gv3GEWRF.plugin.ui.tab_simulation import SimulationTab
 from Gv3GEWRF.plugin.ui.widget_view import ViewWidget
