@@ -50,18 +50,18 @@ class GeneralWidget(QWidget):
                   </html>
                """
 
-#        label_title = QLabel(title)
-#        label_text = QLabel(text)
-#        label_text.setWordWrap(True)
-#        label_text.setOpenExternalLinks(True)
+        label_title = QLabel(title)
+        label_text = QLabel(text)
+        label_text.setWordWrap(True)
+        label_text.setOpenExternalLinks(True)
 #        label_pixmap = QLabel()
 #        pixmap = QPixmap('/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png')
 #        label_pixmap.setPixmap(pixmap)
 #        label_pixmap.setAlignment(Qt.AlignCenter)
-#        vbox.addWidget(label_title)
+        vbox.addWidget(label_title)
 #        vbox.addWidget(label_pixmap)
-#        vbox.addWidget(label_text)
-#        vbox.addStretch()
+        vbox.addWidget(label_text)
+        vbox.addStretch()
 
         vbox.addWidget(btn_new)
         vbox.addWidget(btn_existing)
