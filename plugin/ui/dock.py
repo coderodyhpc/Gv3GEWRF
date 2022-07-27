@@ -15,7 +15,7 @@ from Gv3GEWRF.plugin.ui.helpers import WhiteScroll
 class MainDock(QDockWidget):
     """Set up the principle side dock"""
     def __init__(self, iface: QgisInterface, dock_widget: QDockWidget) -> None:
-        super().__init__('GIS4WRF')
+        super().__init__('Graviton3 Graphic Environment for WRF')
 
         tabs = QTabWidget()
         tabs.addTab(WhiteScroll(HomeTab()), 'Home')
