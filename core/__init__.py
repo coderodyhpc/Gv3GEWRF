@@ -26,5 +26,5 @@ from Gv3GEWRF.core.transforms.wps_binary_to_gdal import *
 from Gv3GEWRF.core.transforms.wps_namelist_to_project import *
 from Gv3GEWRF.core.transforms.wrf_netcdf_to_gdal import *
 from Gv3GEWRF.core.crs import *
-###from Gv3GEWRF.core.program import *
+from Gv3GEWRF.core.program import *
 from Gv3GEWRF.core.project import *
