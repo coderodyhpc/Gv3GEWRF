@@ -10,7 +10,7 @@ from Gv3GEWRF.plugin.ui.widget_process import Process
 
 class DownloadTab(QTabWidget):
     def __init__(self, iface) -> None:
-        super().__init__('Accelerated download of meteorological data')
+        super().__init__()
 
         gfs = WhiteScroll(self.general_tab)
         nam = WhiteScroll(self.domain_tab)
