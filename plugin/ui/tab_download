@@ -8,7 +8,7 @@ from Gv3GEWRF.plugin.ui.helpers import WhiteScroll
 from Gv3GEWRF.plugin.ui.widget_process import Process
 
 
-class DatasetsTab(QTabWidget):
+class DownloadTab(QTabWidget):
     def __init__(self, iface) -> None:
         super().__init__()
 
