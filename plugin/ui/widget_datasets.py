@@ -83,9 +83,8 @@ class DatasetsWidget(QWidget):
 
         self.label_geodata_wps_not_setup = QLabel(
             '<html>NOTE: Your project does not yet have a copy of a GEOGRID.TBL file.<br>'
-            'This is required for configuring geographical data.<br>'
-            'You need to <a href="https://gis4wrf.github.io/configuration/">setup WPS</a> first '
-            'so that GIS4WRF can do an automatic<br>copy of that file. When you are done, return here.</html>')
+            'This is required for configuring geographical data.<br></html>')
+
         self.label_geodata_wps_not_setup.setOpenExternalLinks(True)
         self.label_geodata_wps_not_setup.setVisible(False)
         vbox_geodata.addWidget(self.label_geodata_wps_not_setup)
