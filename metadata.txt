@@ -7,8 +7,8 @@ description=Plugin for pre- and post-processing, visualizing, and running simula
 about=Gv3GEWRF
 
 homepage=https://odyhpc.com
-###repository=https://github.com/GIS4WRF/gis4wrf
-###tracker=https://github.com/GIS4WRF/gis4wrf/issues
+###repository=https://odyhpc.com
+###tracker=https://odyhpc.com
 
 tags=WRF, WPS, GIS, NetCDF, GRIB, NWP, weather, atmospheric science, atmospheric modelling, plotting
 icon=plugin/resources/QGIS_logo64.png
