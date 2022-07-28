@@ -21,7 +21,7 @@ class PreprocessorTab(QTabWidget):
     view_wrf_nc_file = pyqtSignal(str)
 
     def __init__(self, iface: QgisInterface) -> None:
-        super().__init__()
+        super().__init__('Preprocessing Tools')
 
         self.iface = iface
 
