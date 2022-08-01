@@ -32,12 +32,18 @@ class WRFTab(QTabWidget):
         self.general_tab.open_project.connect(self.on_open_project)
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
+# Domain
         self.domain_tab = DomainWidget(iface)
+# Datasets
         self.datasets_tab = DatasetsWidget(iface)
+# Run widget
         self.run_tab = RunWidget(iface)
 
+# Domain
         self.domain_tab.go_to_data_tab.connect(self.open_data_tab)
+# Datasets
         self.datasets_tab.go_to_run_tab.connect(self.open_run_tab)
+# Run widget
         self.run_tab.view_wrf_nc_file.connect(self.view_wrf_nc_file)
 
         self.addTab(WhiteScroll(self.general_tab), 'Description')
