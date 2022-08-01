@@ -54,9 +54,10 @@ class WRFDescriptionWidget(QWidget):
                         </ul> 
                   </html>
                """
-
+#        self.label_1 = QLabel('Arial font', self)
         label_title = QLabel(title)
         label_text = QLabel(text)
+        label_text.setFont(QFont('Times', 15))
         label_text.setWordWrap(True)
         label_text.setOpenExternalLinks(True)
 #        label_pixmap = QLabel()
