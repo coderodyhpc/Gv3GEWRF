@@ -24,15 +24,16 @@ from Gv3GEWRF.core import (logger)
 # Initialize Qt resources from auto-generated file resources.py
 ###import Gv3GEWRF.plugin.resources
 
-###from Gv3GEWRF.plugin.ui.thread import TaskThread
+from Gv3GEWRF.plugin.ui.thread import TaskThread
 from Gv3GEWRF.plugin.ui.helpers import install_user_error_handler
 
 ###from Gv3GEWRF.plugin.ui.options import OptionsFactory
+#  THIS IS GOING TO BE CRITICAL & I NEED TO CHECK IT
 from Gv3GEWRF.plugin.ui.dock import MainDock
-###from Gv3GEWRF.plugin.ui.dialog_about import AboutDialog
+from Gv3GEWRF.plugin.ui.dialog_about import AboutDialog
 
-###from Gv3GEWRF.plugin.options import get_options
-###from Gv3GEWRF.plugin.geo import add_default_basemap, load_wps_binary_layer
+from Gv3GEWRF.plugin.options import get_options
+from Gv3GEWRF.plugin.geo import add_default_basemap, load_wps_binary_layer
 ###from Gv3GEWRF.plugin.constants import (
 ###    PLUGIN_NAME, GIS4WRF_LOGO_PATH, ADD_WRF_NETCDF_LAYER_ICON_PATH, 
 ###    ADD_BINARY_LAYER_ICON_PATH, ABOUT_ICON_PATH, BUG_ICON_PATH)
