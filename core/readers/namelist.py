@@ -1,5 +1,4 @@
-# Gv3GEWRF 
-# Copyright (c) Odycloud.
+# Gv3GEWRF
 
 from typing import Dict, Any, Union, Optional
 import os
@@ -12,9 +11,9 @@ import f90nml
 from Gv3GEWRF.core.util import export
 from Gv3GEWRF.core.errors import UserError
 
-ALBUM_DIR = os.path.join(os.path.dirname(__file__),  'album')
+SCHEMA_DIR = os.path.join(os.path.dirname(__file__),  'nml_schemas')
 
-ALBUM_VAR_TYPES = {
+SCHEMA_VAR_TYPES = {
     'str': str,
     'int': int,
     'real': float,
@@ -22,7 +21,7 @@ ALBUM_VAR_TYPES = {
     'list': list
 }
 
-ALBUM_CACHE = {} # type: Dict[str,Any]
+SCHEMA_CACHE = {} # type: Dict[str,Any]
 
 @export
 def read_namelist(path: Union[str, StringIO], schema_name: Optional[str]=None) -> dict:
@@ -42,15 +41,15 @@ def read_namelist(path: Union[str, StringIO], schema_name: Optional[str]=None) -
             schema_group = schema[group_name]
             for var_name, var_val in group.items():
                 schema_var = schema_group[var_name]
-                schema_type = ALBUM_VAR_TYPES[schema_var['type']]
+                schema_type = SCHEMA_VAR_TYPES[schema_var['type']]
                 if schema_type is list and not isinstance(var_val, list):
                     group[var_name] = [var_val]
     return nml
 
 @export
 def get_namelist_schema(name: str) -> dict:
-    if name not in ALBUM_CACHE:
-        schema_path = os.path.join(ALBUM_DIR, name + '.json')
+    if name not in SCHEMA_CACHE:
+        schema_path = os.path.join(SCHEMA_DIR, name + '.json')
         with open(schema_path, encoding='utf-8') as f:
             schema = json.load(f)
         # Enforce lower-case keys to ease processing.
@@ -62,8 +61,28 @@ def get_namelist_schema(name: str) -> dict:
             }
             for group_name, group in schema.items()
         }
-        ALBUM_CACHE[name] = schema
-    return ALBUM_CACHE[name]
+        # Convert non-string "options" keys to their type.
+        for _, group in schema.items():
+            for _, var_val in group.items():
+                if 'options' in var_val:
+                    if isinstance(var_val['options'], list):
+                        continue
+                    if var_val['type'] == 'list':
+                        t = var_val['itemtype']
+                    else:
+                        t = var_val['type']
+                    if t == 'int':
+                        parsefn = int
+                    elif t == 'bool':
+                        parsefn = lambda k: k.lower() == 'true'
+                    else:
+                        continue
+                    var_val['options'] = {
+                        parsefn(k): v
+                        for k, v in var_val['options'].items()
+                    }
+        SCHEMA_CACHE[name] = schema
+    return SCHEMA_CACHE[name]
 
 def is_compatible_type(val, schema_type):
     if schema_type is float:
@@ -74,7 +93,7 @@ def is_compatible_type(val, schema_type):
 
 def verify_namelist_var(var_name: str, var_val: Union[str,int,float,bool,list],
                         schema_var: dict) -> None:
-    schema_type = ALBUM_VAR_TYPES[schema_var['type']]
+    schema_type = SCHEMA_VAR_TYPES[schema_var['type']]
     if schema_type is list:
         # A single-item list always gets parsed as primitive value since there is nothing
         # to distinguish them from each other in the namelist format.
@@ -86,14 +105,14 @@ def verify_namelist_var(var_name: str, var_val: Union[str,int,float,bool,list],
     options = schema_var.get('options')
     if not isinstance(var_val, list):
         if isinstance(options, dict):
-            options = list(map(schema_type, options.keys()))
+            options = list(options.keys())
         if options and var_val not in options:
             raise ValueError('Variable "{}" has the value "{}" but must be one of {}'.format(
                 var_name, var_val, options))
     else:
-        item_type = ALBUM_VAR_TYPES[schema_var['itemtype']]
+        item_type = SCHEMA_VAR_TYPES[schema_var['itemtype']]
         if isinstance(options, dict):
-            options = list(map(item_type, options.keys()))
+            options = list(options.keys())
         # Currently, min/max/regex is only used for list variables in the schema.
         val_min = schema_var.get('min') # type: Optional[int]
         val_max = schema_var.get('max') # type: Optional[int]
@@ -141,3 +160,4 @@ def verify_namelist(namelist: dict, schema_or_name: Union[dict,str]) -> None:
                 raise ValueError('"{}" is an unknown variable name in group "{}"'.format(var_name, group_name))
             schema_var = schema_group[var_name]
             verify_namelist_var(var_name, var_val, schema_var)
+            
