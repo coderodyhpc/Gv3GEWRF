@@ -16,6 +16,7 @@ from Gv3GEWRF.plugin.ui.widget_general import GeneralWidget
 from Gv3GEWRF.plugin.ui.widget_domains import DomainWidget
 from Gv3GEWRF.plugin.ui.widget_datasets import DatasetsWidget
 from Gv3GEWRF.plugin.ui.widget_run import RunWidget
+from Gv3GEWRF.plugin.ui.widget_wrfdescription import WRFDescriptionWidget
 
 class WRFTab(QTabWidget):
     view_wrf_nc_file = pyqtSignal(str)
