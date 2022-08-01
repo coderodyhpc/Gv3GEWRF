@@ -28,7 +28,7 @@ class WRFTab(QTabWidget):
 
         self.options = get_options()
 
-        self.general_tab = GeneralWidget()
+        self.general_tab = WRFDescriptionWidget()
         self.general_tab.open_project.connect(self.on_open_project)
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
