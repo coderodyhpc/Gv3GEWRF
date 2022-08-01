@@ -46,7 +46,7 @@ class PreprocessorTab(QTabWidget):
 
         self.tabs = [self.general_tab, self.domain_tab]
 
-        self.disable_project_dependent_tabs()
+#        self.disable_project_dependent_tabs()
 
         self.project = Project.create()
         self.set_project_in_tabs()
@@ -107,7 +107,8 @@ class PreprocessorTab(QTabWidget):
             self.enable_project_dependent_tabs()
             self.project.save()
         else:
-            self.disable_project_dependent_tabs()
+            pass
+#            self.disable_project_dependent_tabs()
 
     def on_open_project(self, path: str) -> None:
         self.project = Project.load(path)
@@ -117,7 +118,7 @@ class PreprocessorTab(QTabWidget):
     def on_close_project(self) -> None:
         self.project = Project.create()
         self.set_project_in_tabs()
-        self.disable_project_dependent_tabs()
+#        self.disable_project_dependent_tabs()
 
     def on_tab_changed(self, index: int) -> None:
         self.tabs[index].tab_active.emit()
@@ -126,6 +127,6 @@ class PreprocessorTab(QTabWidget):
         self.datasets_tab.setEnabled(True)
         self.run_tab.setEnabled(True)
 
-    def disable_project_dependent_tabs(self) -> None:
-        self.datasets_tab.setEnabled(False)
-        self.run_tab.setEnabled(False)
+#    def disable_project_dependent_tabs(self) -> None:
+#        self.datasets_tab.setEnabled(False)
+#        self.run_tab.setEnabled(False)
