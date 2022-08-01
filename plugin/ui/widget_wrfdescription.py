@@ -33,6 +33,7 @@ class WRFDescriptionWidget(QWidget):
 
         btn_new = QPushButton("Create Project",
             clicked=self.on_create_project_button_clicked)
+        btn_new.setFont(QFont('Exo 2'))
 
         btn_existing = QPushButton("Open Project",
             clicked=self.on_open_project_button_clicked)
@@ -52,9 +53,9 @@ class WRFDescriptionWidget(QWidget):
                         <br>
                         <p>These are the different options to run WRF .</p>
                         <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
+                        <li>Build the input file from the preprocessor tab</li>
+                        <li>If the meteorological data is already available, you can run real and wrf. </li>
+                        <li>If the boundary and initial files are already available, you can run wrf</li>
                         </ul> 
                   </html>
                """
@@ -62,7 +63,7 @@ class WRFDescriptionWidget(QWidget):
         label_title = QLabel(title)
         label_text = QLabel(text)
         label_title.setFont(QFont('Exo'))
-        label_text.setFont(QFont('Exo 2', 15))
+        label_text.setFont(QFont('Exo 2'))
         label_text.setWordWrap(True)
         label_text.setOpenExternalLinks(True)
 #        label_pixmap = QLabel()
