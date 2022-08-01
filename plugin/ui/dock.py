@@ -10,6 +10,7 @@ from Gv3GEWRF.plugin.ui.tab_download import DownloadTab
 from Gv3GEWRF.plugin.ui.tab_datasets import DatasetsTab
 from Gv3GEWRF.plugin.ui.tab_preprocessor import PreprocessorTab
 from Gv3GEWRF.plugin.ui.tab_simulation import SimulationTab
+from Gv3GEWRF.plugin.ui.tab_WRF import WRFTab
 from Gv3GEWRF.plugin.ui.widget_view import ViewWidget
 from Gv3GEWRF.plugin.ui.helpers import WhiteScroll
 
@@ -26,6 +27,8 @@ class MainDock(QDockWidget):
         self.preprocessor_tab = PreprocessorTab(iface)
         tabs.addTab(self.preprocessor_tab, "Preprocessor")
         self.simulation_tab = SimulationTab(iface)
+        tabs.addTab(self.simulation_tab, "WRF")
+        self.simulation_tab = WRFTab(iface)
         tabs.addTab(self.simulation_tab, "Simulation")
         self.view_tab = ViewWidget(iface, dock_widget)
         tabs.addTab(self.view_tab, "View")
