@@ -3,14 +3,18 @@
 
 from pathlib import Path
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtWidgets import (
-    QWidget, QTabWidget, QPushButton, QLayout, QVBoxLayout, QDialog, QGridLayout, QGroupBox, QSpinBox,
-    QLabel, QHBoxLayout, QComboBox, QScrollArea, QFileDialog, QRadioButton, QLineEdit, QTableWidget,
-    QTableWidgetItem, QTreeWidget, QTreeWidgetItem
-)
-from PyQt5.QtGui import QPixmap
+#from PyQt5.QtCore import Qt
+#from PyQt5.QtCore import pyqtSignal
+#from PyQt5.QtWidgets import (
+#    QWidget, QTabWidget, QPushButton, QLayout, QVBoxLayout, QDialog, QGridLayout, QGroupBox, QSpinBox,
+#    QLabel, QHBoxLayout, QComboBox, QScrollArea, QFileDialog, QRadioButton, QLineEdit, QTableWidget,
+#    QTableWidgetItem, QTreeWidget, QTreeWidgetItem
+#)
+#from PyQt5.QtGui import QPixmap
+
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
 from Gv3GEWRF.core import Project
 from Gv3GEWRF.plugin.options import get_options
