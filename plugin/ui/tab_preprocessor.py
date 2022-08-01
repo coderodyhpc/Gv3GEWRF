@@ -15,6 +15,9 @@ from Gv3GEWRF.plugin.ui.helpers import WhiteScroll, ensure_folder_empty
 from Gv3GEWRF.plugin.ui.widget_general import GeneralWidget
 from Gv3GEWRF.plugin.ui.widget_preprosteps import PreproStepsWidget
 from Gv3GEWRF.plugin.ui.widget_domains import DomainWidget
+from Gv3GEWRF.plugin.ui.widget_geogrid import GeogridWidget
+
+### Probably to be erased
 from Gv3GEWRF.plugin.ui.widget_datasets import DatasetsWidget
 from Gv3GEWRF.plugin.ui.widget_run import RunWidget
 
