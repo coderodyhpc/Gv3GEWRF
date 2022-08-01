@@ -32,6 +32,7 @@ class PreprocessorTab(QTabWidget):
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
         self.domain_tab = DomainWidget(iface)
+        self.geogrid_tab = GeneralWidget()
 #        self.datasets_tab = DatasetsWidget(iface)
 #        self.run_tab = RunWidget(iface)
 
@@ -39,12 +40,13 @@ class PreprocessorTab(QTabWidget):
 #        self.datasets_tab.go_to_run_tab.connect(self.open_run_tab)
 #        self.run_tab.view_wrf_nc_file.connect(self.view_wrf_nc_file)
 
-        self.addTab(WhiteScroll(self.general_tab), 'Description')
+        self.addTab(WhiteScroll(self.general_tab), 'Steps')
         self.addTab(WhiteScroll(self.domain_tab), 'Domain creation')
+        self.addTab(WhiteScroll(self.geogrid_tab), 'Geogrid')
 #        self.addTab(WhiteScroll(self.datasets_tab), 'Data2')
 #        self.addTab(WhiteScroll(self.run_tab), 'Run')
 
-        self.tabs = [self.general_tab, self.domain_tab]
+        self.tabs = [self.general_tab, self.domain_tab, self.geogrid_tab]
 
 #        self.disable_project_dependent_tabs()
 
