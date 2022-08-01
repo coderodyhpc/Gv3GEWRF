@@ -13,6 +13,7 @@ from Gv3GEWRF.plugin.options import get_options
 from Gv3GEWRF.plugin.broadcast import Broadcast
 from Gv3GEWRF.plugin.ui.helpers import WhiteScroll, ensure_folder_empty
 from Gv3GEWRF.plugin.ui.widget_general import GeneralWidget
+from Gv3GEWRF.plugin.ui.widget_preprosteps import PreproStepsWidget
 from Gv3GEWRF.plugin.ui.widget_domains import DomainWidget
 from Gv3GEWRF.plugin.ui.widget_datasets import DatasetsWidget
 from Gv3GEWRF.plugin.ui.widget_run import RunWidget
@@ -27,7 +28,7 @@ class PreprocessorTab(QTabWidget):
 
         self.options = get_options()
 
-        self.general_tab = GeneralWidget()
+        self.general_tab = PreproStepsWidget()
         self.general_tab.open_project.connect(self.on_open_project)
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
