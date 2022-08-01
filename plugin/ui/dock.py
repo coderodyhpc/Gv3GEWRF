@@ -21,15 +21,21 @@ class MainDock(QDockWidget):
 
         tabs = QTabWidget()
         tabs.addTab(WhiteScroll(HomeTab()), 'Home')
+# Download
         tabs.addTab(DatasetsTab(iface), "Download")
         self.download_tab = DownloadTab(iface)
+# Datasets
         tabs.addTab(DatasetsTab(iface), "Datasets")
+# Preprocessor
         self.preprocessor_tab = PreprocessorTab(iface)
         tabs.addTab(self.preprocessor_tab, "Preprocessor")
+# Simulation
         self.simulation_tab = SimulationTab(iface)
         tabs.addTab(self.simulation_tab, "Simulation")
-        self.simulation_tab = WRFTab(iface)
-        tabs.addTab(self.simulation_tab, "WRF")
+# WRF
+        self.WRF_tab = WRFTab(iface)
+        tabs.addTab(self.WRF_tab, "WRF")
+# View
         self.view_tab = ViewWidget(iface, dock_widget)
         tabs.addTab(self.view_tab, "View")
         self.setWidget(tabs)
