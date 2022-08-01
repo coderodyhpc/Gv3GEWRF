@@ -70,8 +70,8 @@ class PreprocessorTab(QTabWidget):
             self.update_project()
         self.general_tab.project = project
         self.domain_tab.project = project
-        self.datasets_tab.project = project
-        self.run_tab.project = project
+#        self.datasets_tab.project = project
+#        self.run_tab.project = project
 
     def update_project(self) -> None:
         if not self.project:
