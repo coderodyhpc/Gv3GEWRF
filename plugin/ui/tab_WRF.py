@@ -39,7 +39,7 @@ class WRFTab(QTabWidget):
         self.datasets_tab.go_to_run_tab.connect(self.open_run_tab)
         self.run_tab.view_wrf_nc_file.connect(self.view_wrf_nc_file)
 
-        self.addTab(WhiteScroll(self.general_tab), 'General')
+        self.addTab(WhiteScroll(self.general_tab), 'Description')
         self.addTab(WhiteScroll(self.domain_tab), 'Domain')
         self.addTab(WhiteScroll(self.datasets_tab), 'Data')
         self.addTab(WhiteScroll(self.run_tab), 'Run')
