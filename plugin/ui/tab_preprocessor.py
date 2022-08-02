@@ -46,11 +46,12 @@ class PreprocessorTab(QTabWidget):
 
         self.addTab(WhiteScroll(self.general_tab), 'Steps')
         self.addTab(WhiteScroll(self.domain_tab), 'Domain creation')
-        self.addTab(WhiteScroll(self.geogrid_tab), 'Geogrid')
+#        self.addTab(WhiteScroll(self.geogrid_tab), 'Geogrid')
 #        self.addTab(WhiteScroll(self.datasets_tab), 'Data2')
 #        self.addTab(WhiteScroll(self.run_tab), 'Run')
 
-        self.tabs = [self.general_tab, self.domain_tab, self.geogrid_tab]
+#        self.tabs = [self.general_tab, self.domain_tab, self.geogrid_tab]
+        self.tabs = [self.general_tab, self.domain_tab]
 
 #        self.disable_project_dependent_tabs()
 
