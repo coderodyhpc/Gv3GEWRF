@@ -38,8 +38,9 @@ class Options(object):
 
         self._working_dir = settings.value(Keys.WORKING_DIR, default_working_dir)
 
-        self._wrf_dir = settings.value(Keys.WRF_DIR, None)
+#        self._wrf_dir = settings.value(Keys.WRF_DIR, None)
 #        self._wps_dir = settings.value(Keys.WPS_DIR, None)
+        self._wrf_dir = "/home/ubuntu/WRF-4.4/test/em_real"
         self._wps_dir = "/home/ubuntu/PREPRO/WPS"  
 
 #        self._mpi_enabled = settings.value(Keys.MPI_ENABLED, False, type=bool)
