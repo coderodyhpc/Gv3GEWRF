@@ -36,11 +36,10 @@ class VanillaWidget(QWidget):
     def __init__(self, iface: QgisInterface) -> None:
         super().__init__()
 #        pass
-        self.iface = iface
 
+        self.iface = iface
         self.options = get_options()
         self.msg_bar = MessageBar(iface)
-
         self.wps_box, [open_namelist_wps, prepare_only_wps, run_geogrid, run_ungrib, run_metgrid, open_output_wps] = \
             self.create_gbox_with_btns('WPS', [
                 'Open Configuration',
@@ -49,6 +48,10 @@ class VanillaWidget(QWidget):
                 'Visualize Output'
             ])
 
+        vbox = QVBoxLayout()
+        vbox.addWidget(self.wps_box)        
+        
+        
     def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
             -> Tuple[QGroupBox, List[QPushButton]]:
         vbox = QVBoxLayout()
