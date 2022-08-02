@@ -52,8 +52,8 @@ class QGISPlugin():
 
 #        install_user_error_handler(self.iface) #This is at plugin/ui/helpers.py
 
-# create action that will start plugin configuration
-
+#!#!# These are the actions defining the different options at the Gv3GEWRF menu 
+#!#!# (maybe I should get rid of it and simply start the app w/o asking any Qs) 
         self.menu = '&' + PLUGIN_NAME
         self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
                         text=PLUGIN_NAME, callback=self.show_dock, add_to_toolbar=True,
