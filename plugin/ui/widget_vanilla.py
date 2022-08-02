@@ -104,6 +104,9 @@ class VanillaWidget(QWidget):
                          supports_mpi=False)
 
     def prepare_wps_run(self) -> None:
+        print("At prepare_wps_run ")
+        aaa=self.options.wps_dir
+        print(aaa)
         if not self.options.wps_dir:
             raise WPSDistributionError('WPS is not setup')
         self.project.prepare_wps_run(self.options.wps_dir)
