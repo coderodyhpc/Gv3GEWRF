@@ -50,7 +50,8 @@ class VanillaWidget(QWidget):
 
         vbox = QVBoxLayout()
         vbox.addWidget(self.wps_box)        
-        
+
+        self.setLayout(vbox)
         
     def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
             -> Tuple[QGroupBox, List[QPushButton]]:
