@@ -39,7 +39,8 @@ class Options(object):
         self._working_dir = settings.value(Keys.WORKING_DIR, default_working_dir)
 
         self._wrf_dir = settings.value(Keys.WRF_DIR, None)
-        self._wps_dir = settings.value(Keys.WPS_DIR, None)
+#        self._wps_dir = settings.value(Keys.WPS_DIR, None)
+        wps_dir = "/home/ubuntu/PREPRO/WPS"  
 
 #        self._mpi_enabled = settings.value(Keys.MPI_ENABLED, False, type=bool)
 #        self._mpi_processes = settings.value(Keys.MPI_PROCESSES, multiprocessing.cpu_count(), type=int)
