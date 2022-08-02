@@ -46,7 +46,7 @@ class VanillaWidget(QWidget):
 #                'Prepare only',
 #                ['Run Geogrid', 'Run Ungrib', 'Run Metgrid'],
 #                'Visualize Output'
-            ])
+#            ])
 
         self.wps_box, [run_geogrid, run_ungrib, run_metgrid, open_output_wps] = \
             self.create_gbox_with_btns('WPS Preprocessor', [
