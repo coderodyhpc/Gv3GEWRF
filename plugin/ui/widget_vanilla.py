@@ -78,8 +78,7 @@ class VanillaWidget(QWidget):
     def project(self, val: Project) -> None:
         ''' Sets the currently active project. See tab_simulation. '''
         self._project = val
-        self.update_project_path_label()
-
+        
     def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
             -> Tuple[QGroupBox, List[QPushButton]]:
         vbox = QVBoxLayout()
