@@ -16,6 +16,7 @@ from Gv3GEWRF.plugin.ui.widget_general import GeneralWidget
 from Gv3GEWRF.plugin.ui.widget_preprosteps import PreproStepsWidget
 from Gv3GEWRF.plugin.ui.widget_domains import DomainWidget
 from Gv3GEWRF.plugin.ui.widget_geogrid import GeogridWidget
+from Gv3GEWRF.plugin.ui.widget_vanilla import VanillaWidget
 
 ### Probably to be erased
 from Gv3GEWRF.plugin.ui.widget_datasets import DatasetsWidget
@@ -36,6 +37,7 @@ class PreprocessorTab(QTabWidget):
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
         self.domain_tab = DomainWidget(iface)
+        self.vanilla_tab = VanillaWidget(iface)
 #        self.geogrid_tab = GeogridWidget()
 #        self.datasets_tab = DatasetsWidget(iface)
 #        self.run_tab = RunWidget(iface)
@@ -46,12 +48,13 @@ class PreprocessorTab(QTabWidget):
 
         self.addTab(WhiteScroll(self.general_tab), 'Steps')
         self.addTab(WhiteScroll(self.domain_tab), 'Domain creation')
+        self.addTab(WhiteScroll(self.vanilla_tab), 'Vanilla')
 #        self.addTab(WhiteScroll(self.geogrid_tab), 'Geogrid')
 #        self.addTab(WhiteScroll(self.datasets_tab), 'Data2')
 #        self.addTab(WhiteScroll(self.run_tab), 'Run')
 
 #        self.tabs = [self.general_tab, self.domain_tab, self.geogrid_tab]
-        self.tabs = [self.general_tab, self.domain_tab]
+        self.tabs = [self.general_tab, self.domain_tab, self.vanilla_tab]
 
 #        self.disable_project_dependent_tabs()
 
