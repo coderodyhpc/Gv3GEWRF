@@ -70,6 +70,10 @@ class VanillaWidget(QWidget):
 #        run_metgrid.clicked.connect(self.on_run_metgrid_clicked)
 #        open_output_wps.clicked.connect(self.on_open_output_wps_clicked)
 
+    @property
+    def project(self) -> Project:
+        return self._project
+
     @project.setter
     def project(self, val: Project) -> None:
         ''' Sets the currently active project. See tab_simulation. '''
