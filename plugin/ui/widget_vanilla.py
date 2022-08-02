@@ -30,5 +30,5 @@ from Gv3GEWRF.plugin.ui.thread import ProgramThread
 from Gv3GEWRF.plugin.ui.dialog_nml_editor import NmlEditorDialog
 
 class VanillaWidget(QWidget):
-    Pass
+    pass
     
