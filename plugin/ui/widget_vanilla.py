@@ -52,7 +52,14 @@ class VanillaWidget(QWidget):
         vbox.addWidget(self.wps_box)        
 
         self.setLayout(vbox)
-        
+ 
+        open_namelist_wps.clicked.connect(self.on_open_namelist_wps_clicked)
+#        prepare_only_wps.clicked.connect(self.on_prepare_only_wps_clicked)
+#        run_geogrid.clicked.connect(self.on_run_geogrid_clicked)
+#        run_ungrib.clicked.connect(self.on_run_ungrib_clicked)
+#        run_metgrid.clicked.connect(self.on_run_metgrid_clicked)
+#        open_output_wps.clicked.connect(self.on_open_output_wps_clicked)
+
     def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
             -> Tuple[QGroupBox, List[QPushButton]]:
         vbox = QVBoxLayout()
