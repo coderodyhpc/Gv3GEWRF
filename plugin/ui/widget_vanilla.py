@@ -70,6 +70,12 @@ class VanillaWidget(QWidget):
 #        run_metgrid.clicked.connect(self.on_run_metgrid_clicked)
 #        open_output_wps.clicked.connect(self.on_open_output_wps_clicked)
 
+    @project.setter
+    def project(self, val: Project) -> None:
+        ''' Sets the currently active project. See tab_simulation. '''
+        self._project = val
+        self.update_project_path_label()
+
     def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
             -> Tuple[QGroupBox, List[QPushButton]]:
         vbox = QVBoxLayout()
