@@ -11,8 +11,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QAction, QWidget
-###from PyQt5.QtGui import *
-###from PyQt5.QtWidgets import *
+
 from qgis.core import QgsMessageLog, Qgis
 from qgis.gui import QgisInterface
 
@@ -37,6 +36,7 @@ from Gv3GEWRF.plugin.geo import add_default_basemap, load_wps_binary_layer
 ###    PLUGIN_NAME, GIS4WRF_LOGO_PATH, ADD_WRF_NETCDF_LAYER_ICON_PATH, 
 ###    ADD_BINARY_LAYER_ICON_PATH, ABOUT_ICON_PATH, BUG_ICON_PATH)
 from Gv3GEWRF.plugin.constants import (PLUGIN_NAME) #!!!!#  I ELIMINATED A BUNCH OF VARIABLES
+
 
 class QGISPlugin():
     def __init__(self, iface: QgisInterface) -> None:
@@ -64,10 +64,10 @@ class QGISPlugin():
 #        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
 #                        text='Add WPS Binary Layer...', add_to_add_layer=True, add_to_menu=False,
 #                        parent=self.iface.mainWindow(), callback=self.add_wps_binary_layer)
-        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
-                        text="About", 
-                        callback=self.show_about,
-                        parent=self.iface.mainWindow())
+#        self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
+#                        text="About", 
+#                        callback=self.show_about,
+#                        parent=self.iface.mainWindow())
         self.add_action(icon_path='/home/ubuntu/.local/share/QGIS/QGIS3/profiles/default/python/plugins/Gv3GEWRF/plugin/resources/icon512.png',
                         text='Report a bug', callback=self.report_bug,
                         parent=self.iface.mainWindow(), status_tip='Report a bug')
@@ -99,8 +99,8 @@ class QGISPlugin():
             Qt.RightDockWidgetArea, self.dock_widget)
         add_default_basemap()
 
-    def show_about(self) -> None:
-        AboutDialog().exec_()
+###    def show_about(self) -> None:
+###        AboutDialog().exec_()
 
 ###    def add_wrf_layer(self) -> None:
 ###        path, _ = QFileDialog.getOpenFileName(caption='Open WRF NetCDF File')
@@ -122,7 +122,7 @@ class QGISPlugin():
 ###        webbrowser.open('https://github.com/GIS4WRF/gis4wrf/issues')
 
     def init_logging(self) -> None:
-        print("At init_logging")
+###        print("At init_logging")
 
         levels = {
             # https://github.com/qgis/QGIS/issues/42996
@@ -146,8 +146,10 @@ class QGISPlugin():
     def destroy_logging(self) -> None:
         logger.removeHandler(self.log_handler)
 
+#!#!# These are the components to check plugin, WPS & WRF versions - I don't need it        
     def check_versions(self) -> None:
-        print("CHECK version")
+        pass
+###        print("CHECK version")
 ###        self.check_plugin_version()
 ###        self.check_prebuilt_distribution_version()
 
