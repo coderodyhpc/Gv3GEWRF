@@ -36,7 +36,7 @@ class PreprocessorTab(QTabWidget):
         self.general_tab.create_project.connect(self.on_create_project)
         self.general_tab.close_project.connect(self.on_close_project)
         self.domain_tab = DomainWidget(iface)
-        self.geogrid_tab = GeneralWidget()
+        self.geogrid_tab = GeogridWidget()
 #        self.datasets_tab = DatasetsWidget(iface)
 #        self.run_tab = RunWidget(iface)
 
