@@ -80,4 +80,9 @@ class VanillaWidget(QWidget):
         gbox = QGroupBox(gbox_name)
         gbox.setLayout(vbox)
         return gbox, btns        
+
+    def on_open_namelist_wps_clicked(self) -> None:
+        self.project.update_wps_namelist()
+        self.open_editor_dialog(self.project.wps_namelist_path,
+                                get_namelist_schema('wps'))
         
