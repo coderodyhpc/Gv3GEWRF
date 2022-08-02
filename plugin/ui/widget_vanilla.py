@@ -30,5 +30,10 @@ from Gv3GEWRF.plugin.ui.thread import ProgramThread
 from Gv3GEWRF.plugin.ui.dialog_nml_editor import NmlEditorDialog
 
 class VanillaWidget(QWidget):
-    pass
-    
+    tab_active = pyqtSignal()
+    view_wrf_nc_file = pyqtSignal(str)
+
+    def __init__(self, iface: QgisInterface) -> None:
+        super().__init__()
+        pass
+        
