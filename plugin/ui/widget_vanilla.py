@@ -49,5 +49,24 @@ class VanillaWidget(QWidget):
                 'Visualize Output'
             ])
 
-        
+    def create_gbox_with_btns(self, gbox_name: str, btn_names: List[Union[str,List[str]]]) \
+            -> Tuple[QGroupBox, List[QPushButton]]:
+        vbox = QVBoxLayout()
+        btns = []
+        for name_or_list in btn_names:
+            if isinstance(name_or_list, str):
+                name = name_or_list
+                btn = QPushButton(name)
+                btns.append(btn)
+                vbox.addWidget(btn)
+            else:
+                hbox = QHBoxLayout()
+                for name in name_or_list:
+                    btn = QPushButton(name)
+                    btns.append(btn)
+                    hbox.addWidget(btn)
+                vbox.addLayout(hbox)
+        gbox = QGroupBox(gbox_name)
+        gbox.setLayout(vbox)
+        return gbox, btns        
         
