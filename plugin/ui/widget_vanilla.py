@@ -112,6 +112,16 @@ class VanillaWidget(QWidget):
         self.run_program(self.options.geogrid_exe, self.project.run_wps_folder,
                          supports_mpi=False)
 
+    def on_run_ungrib_clicked(self) -> None:
+        self.prepare_wps_run()
+        self.run_program(self.options.ungrib_exe, self.project.run_wps_folder,
+                         supports_mpi=False)
+
+    def on_run_metgrid_clicked(self) -> None:
+        self.prepare_wps_run()
+        self.run_program(self.options.metgrid_exe, self.project.run_wps_folder,
+                         supports_mpi=False)
+        
     def prepare_wps_run(self) -> None:
         if not self.options.wps_dir:
             raise WPSDistributionError('WPS is not setup')
