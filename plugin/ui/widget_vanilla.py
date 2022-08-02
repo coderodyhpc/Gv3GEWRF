@@ -41,10 +41,13 @@ class VanillaWidget(QWidget):
         self.options = get_options()
         self.msg_bar = MessageBar(iface)
 
-#        self.wps_box, [open_namelist_wps, prepare_only_wps, run_geogrid, run_ungrib, run_metgrid, open_output_wps] = \
-#            self.create_gbox_with_btns('WPS', [
-#                'Open Configuration',
-#                'Prepare only',
-#                ['Run Geogrid', 'Run Ungrib', 'Run Metgrid'],
-#                'Visualize Output'
-#            ])
+        self.wps_box, [open_namelist_wps, prepare_only_wps, run_geogrid, run_ungrib, run_metgrid, open_output_wps] = \
+            self.create_gbox_with_btns('WPS', [
+                'Open Configuration',
+                'Prepare only',
+                ['Run Geogrid', 'Run Ungrib', 'Run Metgrid'],
+                'Visualize Output'
+            ])
+
+        
+        
