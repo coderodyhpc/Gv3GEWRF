@@ -60,6 +60,7 @@ class VanillaWidget(QWidget):
         
         vbox = QVBoxLayout()
         vbox.addWidget(self.wps_box)        
+        vbox.addStretch(1)
 
         self.setLayout(vbox)
  
