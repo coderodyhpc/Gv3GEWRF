@@ -66,7 +66,7 @@ class VanillaWidget(QWidget):
 #        open_namelist_wps.clicked.connect(self.on_open_namelist_wps_clicked)
 #        prepare_only_wps.clicked.connect(self.on_prepare_only_wps_clicked)
         run_geogrid.clicked.connect(self.on_run_geogrid_clicked)
-#        run_ungrib.clicked.connect(self.on_run_ungrib_clicked)
+        run_ungrib.clicked.connect(self.on_run_ungrib_clicked)
 #        run_metgrid.clicked.connect(self.on_run_metgrid_clicked)
 #        open_output_wps.clicked.connect(self.on_open_output_wps_clicked)
 
@@ -113,9 +113,6 @@ class VanillaWidget(QWidget):
                          supports_mpi=False)
 
     def prepare_wps_run(self) -> None:
-        print("At prepare_wps_run ")
-        aaa=self.options.wps_dir
-        print(aaa)
         if not self.options.wps_dir:
             raise WPSDistributionError('WPS is not setup')
         self.project.prepare_wps_run(self.options.wps_dir)
