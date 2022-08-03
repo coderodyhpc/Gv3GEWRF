@@ -16,14 +16,25 @@ class HomeTab(QWidget):
         vbox = QVBoxLayout()
         title = """
                     <html>
-                        <h1>Gv3GEWRF</h1>
+                        <h2>WRF Simulations</h2>
                         <br>
                     </html>
                 """
         text = """
                     <html>
                         <br>
-                        <p>What do I want to write?</p>
+                        <p>Performing WRF simulations requires opening a project and following one of the following procedures:</p>
+                        <ul>
+                            <li>Full procedure that includes downloading the meteorological data, generating the domain(s), \
+                            preprocessing the data (i.e. running geogrid, ungrib, and metgrid), \
+                            generating the initial and boundary conditions files, and running WRF. </li>
+                            <li>If the meteorological files are already available in the project subdirectory (in addition to \
+                            the namelist.input file, you can directly click on the simulation tab and run real and wrf executables.
+                            </li>
+                            <li>If the iniital and boundary conditions files are located at the project subdirectory,
+                             you can directly click on executing wrf from the simulation tab.
+                            </li>
+                        </ul> 
                   </html>
                """
 
